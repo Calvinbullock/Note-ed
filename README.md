@@ -8,6 +8,10 @@ Run testing  / dev server
 Deploy a production page
 - should deploy a build every time a change is pushed/megerd to main git branch
 
+if auto prod build fails
+- `npm run build`
+- `firebase deploy`
+
 [link to firebase setup](https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-firebase/) 
 
 [Live Site](https://noted-eeafd.web.app) 
