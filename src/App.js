@@ -1,13 +1,11 @@
 import './App.css';
-import Test from './components/Test';
+// import Test from './components/Test';
+import Home from './components/Home';
 
 function App() {
     return (
         <div>
-            <Test name="yo"/>
-            <p>hello there</p>
-            <p>test it</p>
-            <a href="https://reactjs.org">react docs</a>
+            <Home/>
         </div>
 
     );
