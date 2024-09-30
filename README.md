@@ -5,10 +5,11 @@ Run testing  / dev server
 - `npm start`
 
 ## firebase deployment / setup
-Deploy a production page
+
+##### Deploy a production page
 - should deploy a build every time a change is pushed/megerd to main git branch
 
-if auto prod build fails
+##### if auto prod build fails
 - `npm run build`
 - `firebase deploy`
 
@@ -17,7 +18,7 @@ if auto prod build fails
 [Live Site](https://noted-eeafd.web.app) 
 
 # Milestone
-- Other
+- Other ideas
     - Pin notes?
     - Synchronization between two devices/tabs
     - Cool new note, expand area to enter note, like keep functionality.
