@@ -10,6 +10,8 @@ Deploy a production page
 
 [link to firebase setup](https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-firebase/) 
 
+[Live Site](https://noted-eeafd.web.app) 
+
 # Milestone
 - Other
     - Pin notes?
