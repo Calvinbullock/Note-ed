@@ -6,6 +6,7 @@ function App() {
         <div>
             <Test name="yo"/>
             <p>hello there</p>
+            <p>test it</p>
             <a href="https://reactjs.org">react docs</a>
         </div>
 
