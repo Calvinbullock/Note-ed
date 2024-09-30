@@ -7,7 +7,7 @@ Run testing  / dev server
 ## firebase deployment / setup
 
 ##### Deploy a production page
-- should deploy a build every time a change is pushed/megerd to main git branch
+- should deploy a build every time a change is pushed/megerd to main git branch -- DISABLED
 
 ##### if auto prod build fails
 - `npm run build`
