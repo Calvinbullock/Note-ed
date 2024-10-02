@@ -23,6 +23,24 @@ Nav Component
     margin-top: 0.5%;
 }
 
+#nav-search {
+    border: none;
+    border-radius: 3px;
+
+    background-color: #f0f0f0;
+    padding: 8px;
+    width: 50%;
+}
+
+#signIn-button {
+    border: none;
+    border-radius: 3px;
+
+    background-color: #f0f0f0;
+    padding: 8px;
+    width: 15%;
+}
+
 /* ==============================================================================
 Default react page styling
 -- REMOVE?? --
