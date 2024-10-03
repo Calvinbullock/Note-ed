@@ -39,10 +39,10 @@ Nav Component
     border-radius: 3px;
 
     background-color: #f0f0f0;
+    margin-top: 0.5%;
     margin-left: 1rem;
-    margin-left: 1rem;
-    padding: 8px;
-    width: 8%;
+    padding: .5rem;
+    width: 10%;
 }
 
 #signIn-button {
@@ -50,6 +50,7 @@ Nav Component
     border-radius: 3px;
 
     background-color: #f0f0f0;
+    margin-top: 0.5%;
     padding: 8px;
     width: 8%;
 }
