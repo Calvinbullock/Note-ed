@@ -17,7 +17,7 @@ function setNotesLocalStorage(item) {
     }
 
     noteList.push(item);
-    localStorage.setItem("noteList", JSON.stringify(item))
+    localStorage.setItem("noteList", JSON.stringify(noteList))
 }       
 
 export { setNotesLocalStorage, getNotesFromLocalStorage }
