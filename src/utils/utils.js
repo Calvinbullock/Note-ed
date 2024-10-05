@@ -1,12 +1,12 @@
 
 function getNotesFromLocalStorage() {
-  const noteListString = localStorage.getItem('noteList');
+    const noteListString = localStorage.getItem('noteList');
 
-  if (noteListString) {
-    return JSON.parse(noteListString);
-  }
+    if (noteListString) {
+        return JSON.parse(noteListString);
+    }
 
-  return null;
+    return null;
 }
 
 function setNotesLocalStorage(item) {
@@ -20,4 +20,20 @@ function setNotesLocalStorage(item) {
     localStorage.setItem("noteList", JSON.stringify(noteList))
 }       
 
-export { setNotesLocalStorage, getNotesFromLocalStorage }
+function deleteNoteFromLocal(noteID) {
+    let noteList = getNotesFromLocalStorage()
+
+    const filteredArray = noteList.filter(item => item.id !== noteID);
+    localStorage.setItem("noteList", JSON.stringify(filteredArray))
+}
+
+function getEpochTimeInSeconds() {
+    return Math.floor(Date.now() / 1000);
+}
+
+export { 
+    setNotesLocalStorage, 
+    getNotesFromLocalStorage, 
+    deleteNoteFromLocal,
+    getEpochTimeInSeconds,
+}
