@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { setNotesLocalStorage } from "../utils/utils";
+import { setNotesLocalStorage, getEpochTimeInSeconds } from "../utils/utils";
 
 function NoteEditor(props) {
     const [ titleValue, setTitleEntry ] = useState("")
@@ -26,6 +26,7 @@ function NoteEditor(props) {
             title: titleValue,
             date: dateValue,
             text: textValue,
+            id: getEpochTimeInSeconds(),
         }
         console.log('values:  ', noteRespone);
         setNotesLocalStorage(noteRespone)
@@ -41,7 +42,7 @@ function NoteEditor(props) {
                     value={titleValue} 
                     onChange={handleTitleEntry} 
                     placeholder="Title"
-                />
+                /><br/>
                 <input 
                     id="note-date-entry" 
                     type="text" 
@@ -49,12 +50,13 @@ function NoteEditor(props) {
                     value={dateValue} 
                     onChange={handleDateChange} 
                     placeholder="Date"
-                />
+                /><br/>
                 <textarea 
                     value={textValue} 
                     onChange={handleTextEntry}
                     placeholder="take a note"
-                ></textarea>
+                ></textarea><br/>
+                <button type="addNote">Add</button>
                 <button type="deleteNote">DELETE</button>
             </form>
         </div>
