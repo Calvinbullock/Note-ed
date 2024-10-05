@@ -57,7 +57,6 @@ function NoteEditor(props) {
                     placeholder="take a note"
                 ></textarea><br/>
                 <button type="addNote">Add</button>
-                <button type="deleteNote">DELETE</button>
             </form>
         </div>
     )
