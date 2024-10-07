@@ -1,5 +1,8 @@
 # Project Readme
 
+## site links
+[Live Site](https://noted-eeafd.web.app) 
+
 ## dev testing 
 Run testing  / dev server
 - `npm start`
