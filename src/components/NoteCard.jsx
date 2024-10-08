@@ -5,7 +5,6 @@ import { deleteNoteFromLocal } from "../utils/utils";
 const NoteCard = (props) => {
 
     const deleteNote = () => {
-        console.log("yo")
         deleteNoteFromLocal(props.id)
     }
 
