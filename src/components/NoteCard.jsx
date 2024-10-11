@@ -8,18 +8,13 @@ const NoteCard = (props) => {
     const fetchNotes = () => {
         const fetchData = async () => {
             try {
-                console.log("response")
                 response = await axios.get(
                     'https://firestore.googleapis.com/v1/projects/noted-eeafd/databases/(default)/documents/Notes', {
                         headers: {
                             'Authorization': `Bearer ----`
                         }
                     });
-                console.log("Done")
-                //setResponse(response.data);
-                console.log(response)
             } catch (error) {
-                console.log("error")
                 console.error(error);
             }
         }
