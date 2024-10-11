@@ -45,10 +45,12 @@ Run testing  / dev server
 
 
 ## resources
-[Firebase React Course For Beginners](https://www.youtube.com/watch?v=2hR-uWjBAgw) 
-[Building Your first React Web Application](https://www.youtube.com/watch?v=NzpbupWoIV4) 
+- [Firebase React Course For Beginners](https://www.youtube.com/watch?v=2hR-uWjBAgw) 
+- [Building Your first React Web Application](https://www.youtube.com/watch?v=NzpbupWoIV4) 
+- [Axios docs](https://axios-http.com/docs/api_intro) 
+- [react rest APIs](https://www.freecodecamp.org/news/how-work-with-restful-apis-in-react-simplified-steps-and-practical-examples/#heading-31-the-fetch-api) 
 
 #### firebase docs
-[rest API code](https://firebase.google.com/docs/firestore/use-rest-api#making_rest_calls) 
-[rest API requests](https://firebase.google.com/docs/firestore/reference/rest/) 
+- [rest API code](https://firebase.google.com/docs/firestore/use-rest-api#making_rest_calls) 
+- [rest API requests](https://firebase.google.com/docs/firestore/reference/rest/) 
 
