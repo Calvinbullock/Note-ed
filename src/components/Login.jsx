@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import Nav from "./Nav";
 
 export default function Login() {
 
@@ -35,8 +34,7 @@ export default function Login() {
     };
 
     return (
-        <div>
-            <Nav />
+        <div class="login-box">
             <input 
                 type="email" 
                 name="email" 

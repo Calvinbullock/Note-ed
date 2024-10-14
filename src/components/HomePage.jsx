@@ -16,7 +16,7 @@ export default function HomePage() {
     let notesList = getNotesFromLocalStorage();
 
     return (
-        <div className="home">
+        <div className="home page">
             <Nav/>
             <NoteEditor {...props}/>
             
