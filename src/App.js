@@ -2,7 +2,7 @@ import './App.css';
 import HomePage from "./components/HomePage";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-function App() {
+export default function App() {
     return (
         <BrowserRouter>
             <Routes>
@@ -11,5 +11,3 @@ function App() {
         </BrowserRouter>   
     );
 }
-
-export default App;
