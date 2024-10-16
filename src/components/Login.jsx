@@ -1,5 +1,7 @@
 
 import React, { useState } from "react";
+import { auth } from "../config/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
 
@@ -12,25 +14,13 @@ export default function Login() {
     const handlePasswordEntry = (event) => {
         setPassword(event.target.value);
     }
-    
-    const signIn = (email, password) => {
-        fetch('/api/signin', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                // Handle successful sign-in
-                localStorage.setItem('auth_token', data.token);
-                // Redirect to a protected page or update UI
-            })
-            .catch((error) => {
-                // Handle errors
-                console.error('Error signing in:', error);
-            });
+
+    const signIn = async () => {
+        try {
+            await createUserWithEmailAndPassword(auth, emailValue, passwordValue);
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     return (

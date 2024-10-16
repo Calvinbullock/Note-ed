@@ -6,19 +6,13 @@ import Nav from "./Nav";
 import NoteCard from "./NoteCard";
 import NoteEditor from "./NoteEditor";
 
-const props = {
-    title: "shop", 
-    date: "Nov 2, 2024",
-    text: "lorm pop yop",
-};
-
-export default function HomePage() {
+export default function HomePage(data) {
     let notesList = getNotesFromLocalStorage();
 
     return (
         <div className="home page">
             <Nav/>
-            <NoteEditor {...props}/>
+            <NoteEditor />
             
             {notesList != null && notesList.map((element, index) => (
                 <NoteCard key={index} {...element} />

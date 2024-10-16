@@ -1,63 +1,63 @@
-
+// react / firebase
 import React, { useState } from "react";
-import { setNotesLocalStorage, getEpochTimeInSeconds } from "../utils/utils";
+import { collection, addDoc} from "firebase/firestore";
 
-function NoteEditor(props) {
+// src js fies
+import { db } from "./../config/firebase";
+
+function NoteEditor() {
     const [ titleValue, setTitleEntry ] = useState("")
     const [ dateValue, setDateEntry ] = useState("")
     const [ textValue, setTextEntry ] = useState("")
 
+    const notesCollectionRef = collection(db, "Notes");
+
     const handleTitleEntry = (event) => {
         setTitleEntry(event.target.value);
     }
-
     const handleDateChange = (event) => {
         setDateEntry(event.target.value);
     }
-
     const handleTextEntry = (event) => {
         setTextEntry(event.target.value);
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();   
-
-        let noteRespone = {
-            title: titleValue,
-            date: dateValue,
-            text: textValue,
-            id: getEpochTimeInSeconds(),
+    const submitNote = async () => {
+        try {
+            await addDoc(notesCollectionRef, {
+                title: titleValue,
+                date: dateValue,
+                text: textValue,
+            });
+        } catch (err) {
+            console.error(err);
         }
-        console.log('values:  ', noteRespone);
-        setNotesLocalStorage(noteRespone)
     };
 
     return (
         <div className="noteEditor">
-            <form onSubmit={handleSubmit}>
-                <input 
-                    id="note-title-entry" 
-                    type="text" 
-                    name="titleEntry" 
-                    value={titleValue} 
-                    onChange={handleTitleEntry} 
-                    placeholder="Title"
-                /><br/>
-                <input 
-                    id="note-date-entry" 
-                    type="text" 
-                    name="dateEntry" 
-                    value={dateValue} 
-                    onChange={handleDateChange} 
-                    placeholder="Date"
-                /><br/>
-                <textarea 
-                    value={textValue} 
-                    onChange={handleTextEntry}
-                    placeholder="take a note"
-                ></textarea><br/>
-                <button type="addNote">Add</button>
-            </form>
+            <input 
+                id="note-title-entry" 
+                type="text" 
+                name="titleEntry" 
+                value={titleValue} 
+                onChange={handleTitleEntry} 
+                placeholder="Title"
+            /><br/>
+            <input 
+                id="note-date-entry" 
+                type="text" 
+                name="dateEntry" 
+                value={dateValue} 
+                onChange={handleDateChange} 
+                placeholder="Date"
+            /><br/>
+            <textarea 
+                value={textValue} 
+                onChange={handleTextEntry}
+                placeholder="take a note"
+            ></textarea><br/>
+            <button type="" onClick={submitNote}>Add</button>
         </div>
     )
 }

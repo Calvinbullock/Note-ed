@@ -19,6 +19,7 @@ const NoteCard = (props) => {
             }
         }
         let response = fetchData();
+        console.log(response);
     }
 
     const deleteNote = () => {
