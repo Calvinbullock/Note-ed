@@ -5,7 +5,7 @@ import { collection, addDoc} from "firebase/firestore";
 // src js fies
 import { db } from "./../config/firebase";
 
-function NoteEditor() {
+export default function NoteEditor() {
     const [ titleValue, setTitleEntry ] = useState("")
     const [ dateValue, setDateEntry ] = useState("")
     const [ textValue, setTextEntry ] = useState("")
@@ -59,7 +59,5 @@ function NoteEditor() {
             ></textarea><br/>
             <button type="" onClick={submitNote}>Add</button>
         </div>
-    )
+    );
 }
-
-export default NoteEditor

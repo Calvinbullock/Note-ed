@@ -1,7 +1,7 @@
 
 import { deleteNoteFromLocal } from "../utils/utils";
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import axios from "axios";
 
 const NoteCard = (props) => {
 
@@ -9,9 +9,9 @@ const NoteCard = (props) => {
         const fetchData = async () => {
             try {
                 response = await axios.get(
-                    'https://firestore.googleapis.com/v1/projects/noted-eeafd/databases/(default)/documents/Notes', {
+                    "https://firestore.googleapis.com/v1/projects/noted-eeafd/databases/(default)/documents/Notes", {
                         headers: {
-                            'Authorization': `Bearer ----`
+                            "Authorization": "Bearer ----"
                         }
                     });
             } catch (error) {
