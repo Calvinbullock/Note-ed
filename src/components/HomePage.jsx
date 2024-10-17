@@ -1,20 +1,18 @@
 
 import React from "react";
-import { getNotesFromLocalStorage } from "../utils/utils";
 
 import Nav from "./Nav";
 import NoteCard from "./NoteCard";
 import NoteEditor from "./NoteEditor";
 
-export default function HomePage(data) {
-    let notesList = getNotesFromLocalStorage();
+export default function HomePage({noteData}) {
 
     return (
         <div className="home page">
             <Nav/>
             <NoteEditor />
             
-            {notesList != null && notesList.map((element, index) => (
+            {noteData != null && noteData.map((element, index) => (
                 <NoteCard key={index} {...element} />
             ))}
         </div>

@@ -12,41 +12,31 @@ import { collection, getDocs } from "firebase/firestore";
 import HomePage from "./components/HomePage";
 import SignInPage from "./components/SignInPage";
 
-// NOTE: TEMP REMOVE USEING AS PROPS
-const props = {
-    title: "shop", 
-    date: "Nov 2, 2024",
-    text: "lorm pop yop",
-};
-
 // main function
 export default function App() {
     const notesCollectionRef = collection(db, "Notes");
-    //const [noteList, setNoteList] = useState();
+    const [noteData, setNoteData] = useState([]);
 
+    // get all Notes from DB
     useEffect(() => {
         const getNoteList = async () => {
             try {
                 const data = await getDocs(notesCollectionRef);
-                const noteData = data.docs.map((doc) => ({
-                    id: doc.id,
-                    ...doc.data(),
-                }));
-
-                console.log(noteData);
+                setNoteData(data.docs.map((doc) => ({id: doc.id, ...doc.data() })));
 
             } catch (err) {
                 console.error(err);
             }
         }
-
         getNoteList();
-    }, [notesCollectionRef]);
+    }, []); // NOTE: should be in the brackets? -- [notesCollectionRef, noteData]
+
+    console.log("note2 ", noteData);
 
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<HomePage {...props}/>} />
+                <Route path="/" element={<HomePage noteData={noteData}/>} />
                 <Route path="/SignIn" element={<SignInPage />} />
             </Routes>
         </BrowserRouter>   
