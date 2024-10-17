@@ -6,16 +6,20 @@ export default function Nav() {
     
     const navigate = useNavigate();
 
-    const handleClick = () => {
+    const handleSignIn = () => {
         navigate('/signIn');
     };
+
+    const handleDarkModeChange = () => {
+        console.log("TODO: in Nav.jsx");
+    }
 
     return (
         <div className="nav">
             <Link to="/"><img src="" alt="logo" /></Link>
             <input id="nav-search" type="" name="search" value="search" placeholder="search"/>
-            <button onClick={handleClick} id="signIn-button" type="">Sign In</button>
-            <button id="dark-mode-switch" type="">Dark Mode</button>
+            <button onClick={handleSignIn} id="signIn-button" type="">Sign In</button>
+            <button onClick={handleDarkModeChange} id="dark-mode-switch" type="">Dark Mode</button>
         </div>
     );
 }
