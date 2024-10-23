@@ -23,8 +23,11 @@ Run testing  / dev server
 # TODO 
 - move all firebase functions to utils?
 - refetch / render note every x seconds 
-- only signed in users can accuses the db
-- check the user is supposed to have accuses to the note
+- Auth
+    - SignUp / SignIn `login.jsx`
+    - only signed in users can accuses the db
+    - check the user is supposed to have accuses to the note
+
 
 # Milestone
 - Other ideas
