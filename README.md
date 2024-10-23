@@ -20,6 +20,12 @@ Run testing  / dev server
 
 [Live Site](https://noted-eeafd.web.app) 
 
+# TODO 
+- move all firebase functions to utils?
+- refetch / render note every x seconds 
+- only signed in users can accuses the db
+- check the user is supposed to have accuses to the note
+
 # Milestone
 - Other ideas
     - Pin notes?
@@ -45,6 +51,8 @@ Run testing  / dev server
 
 
 ## resources
+- [FireBase CRUD](https://www.youtube.com/watch?v=2hR-uWjBAgw) 
+
 - [Firebase React Course For Beginners](https://www.youtube.com/watch?v=2hR-uWjBAgw) 
 - [Building Your first React Web Application](https://www.youtube.com/watch?v=NzpbupWoIV4) 
 - [Axios docs](https://axios-http.com/docs/api_intro) 
