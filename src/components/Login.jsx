@@ -4,7 +4,6 @@ import { auth } from "../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
-
     const [ emailValue, setEmailValue ] = useState("")
     const [ passwordValue, setPassword] = useState("")
 

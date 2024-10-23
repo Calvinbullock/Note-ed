@@ -5,8 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 
 // firebase
-import { db } from "./config/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { db, auth } from "./config/firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 // Components
 import HomePage from "./components/HomePage";
@@ -21,6 +21,12 @@ export default function App() {
     useEffect(() => {
         const getNoteList = async () => {
             try {
+                // TODO: only get Notes that match user ID
+                //const userId = auth?.currentUser.uid;
+                //const notesCollectionRef = collection(db, "notes");
+                //const q = query(notesCollectionRef, where("userId", "==", userId));
+                //const data = await getDocs(q);
+
                 const data = await getDocs(notesCollectionRef);
                 setNoteData(data.docs.map((doc) => ({id: doc.id, ...doc.data() })));
 
@@ -29,16 +35,16 @@ export default function App() {
             }
         }
         getNoteList();
-    }, []); // NOTE: should be in the brackets? -- [notesCollectionRef, noteData]
-
-    console.log("note2 ", noteData);
+    }, []); // [notesCollectionRef, noteData]
 
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<HomePage noteData={noteData}/>} />
-                <Route path="/SignIn" element={<SignInPage />} />
-            </Routes>
-        </BrowserRouter>   
+        <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<HomePage noteData={noteData}/>} />
+                    <Route path="/SignIn" element={<SignInPage />} />
+                </Routes>
+            </BrowserRouter>   
+        </div>
     );
 }

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { collection, addDoc} from "firebase/firestore";
 
 // src js fies
-import { db } from "./../config/firebase";
+import { db, auth } from "./../config/firebase";
 
 export default function NoteEditor() {
     const [ titleValue, setTitleEntry ] = useState("")
@@ -28,6 +28,7 @@ export default function NoteEditor() {
                 title: titleValue,
                 date: dateValue,
                 text: textValue,
+                userId: auth?.currentUser?.uid,
             });
         } catch (err) {
             console.error(err);
