@@ -36,20 +36,24 @@ Run testing  / dev server
     - Edit automatically pops the text back up to the note editing area (like keep). (week 7)
 
 - Tasks and Schedule (Week = 8-10 hours - 126 hours total)
-    - ~~Week 01 = project research and brainstorming~~
-    - ~~Week 02 = finish proposal / install node and react tools~~
-    - Week 03 = Prototype add / remove notes in react page - no backend
-    - Week 04 = clean up and css and react ensure nice page layout
-    - Week 05 = responsive design - mobile / desktop
-    - Week 06 = set up backend and get data moving back and forth
-    - Week 07 = set up front end to use and send backend data 
-    - Week 08 = note editing capabilities
 
-    - Week 09 = set a due dates on note / have an indicator if that time has passed
-    - Week 10 = login page / multi users (each data entry needs user ties??)
-    - Week 11 = web notifications
-    - Week 12 = clean up testing and fixes
-    - Week 13 = Final clean up / testing and fixes
+    - DONE
+        - ~~Week 01 = project research and brainstorming~~
+        - ~~Week 02 = finish proposal / install node and react tools~~
+        - ~~Week 03 = Prototype add / remove notes in react page - no backend~~
+        - ~~Week 06 = set up backend and get data moving back and forth~~
+    
+    - NOT DONE
+        - Week 04 = clean up and css and react ensure nice page layout
+        - Week 05 = responsive design - mobile / desktop
+        - Week 07 = responsive design - mobile / desktop
+        - Week 08 = note editing capabilities
+
+        - Week 09 = set a due dates on note / have an indicator if that time has passed
+        - Week 10 = login page / multi users (each data entry needs user ties??) -- (half done)
+        - Week 11 = web notifications
+        - Week 12 = clean up testing and fixes
+        - Week 13 = Final clean up / testing and fixes
 
 
 ## resources
