@@ -1,5 +1,5 @@
 // react / firebase
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { collection, addDoc} from "firebase/firestore";
 
 // src js fies
@@ -21,6 +21,17 @@ export default function NoteEditor() {
     const handleTextEntry = (event) => {
         setTextEntry(event.target.value);
     }
+
+    useEffect(() => {
+        const textarea = document.querySelector('.noteEditor textarea');
+        const container = textarea.parentNode;
+
+        textarea.addEventListener('input', () => {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+            container.style.height = 'auto';
+        });
+    }, []);
 
     const submitNote = async () => {
         try {

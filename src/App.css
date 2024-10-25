@@ -7,6 +7,8 @@ Home Component
     max-width: 1500px;
 }
 
+
+
 /* ==============================================================================
 Nav Component
 ============================================================================== */
@@ -55,7 +57,7 @@ Nav Component
 }
 
 /* ==============================================================================
-note Editor Component
+* note Editor Component
 ============================================================================== */
 
 .noteEditor {
@@ -85,6 +87,9 @@ note Editor Component
     border: none;
     border-radius: 3px;
     outline: none;
+    min-height: 50px;
+    resize: vertical;
+    resize: none;
 
     background-color: #f0f0f0;
     padding: 8px;
