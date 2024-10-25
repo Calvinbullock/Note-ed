@@ -19,8 +19,6 @@ export default function HomePage({noteData}) {
     );
 }
 
-
-
 // TODO: need to add an event listener for a new note added then re render the
 //      note list
 // TODO: need an idea for each note
