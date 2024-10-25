@@ -36,7 +36,8 @@ export default function App() {
             }
         }
         getNoteList();
-    }, []); // [notesCollectionRef, noteData]
+    // eslint-disable-next-line
+    }, []); // NOTE: [notesCollectionRef, noteData]
 
     return (
         <div>
