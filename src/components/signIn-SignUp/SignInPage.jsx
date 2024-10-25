@@ -1,14 +1,14 @@
 
 import React from "react";
-import Nav from "./Nav";
-import SignUp from "./SignUp";
+import Nav from "./../nav/Nav";
+import Login from "./Login";
 
 export default function SignInPage() {
 
     return (
         <div class="login-page page">
             <Nav />
-            <SignUp/>
+            <Login />
         </div>
     );
 }

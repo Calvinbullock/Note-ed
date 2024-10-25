@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import Nav from "./Nav";
+import Nav from "./nav/Nav";
 import NoteCard from "./NoteCard";
 import NoteEditor from "./NoteEditor";
 

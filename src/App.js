@@ -5,13 +5,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 
 // firebase
-import { db, auth } from "./config/firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "./config/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 // Components
 import HomePage from "./components/HomePage";
-import SignInPage from "./components/SignInPage";
-import SignUpPage from "./components/SignUpPage";
+import SignInPage from "./components/signIn-SignUp/SignInPage";
+import SignUpPage from "./components/signIn-SignUp/SignUpPage";
 
 // main function
 export default function App() {

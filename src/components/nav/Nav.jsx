@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useNavigate, Link } from 'react-router-dom';
-import { auth } from "./../config/firebase";
+import { auth } from "./../../config/firebase";
 
 export default function Nav() {
     
