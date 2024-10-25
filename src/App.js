@@ -11,6 +11,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 // Components
 import HomePage from "./components/HomePage";
 import SignInPage from "./components/SignInPage";
+import SignUpPage from "./components/SignUpPage";
 
 // main function
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<HomePage noteData={noteData}/>} />
                     <Route path="/SignIn" element={<SignInPage />} />
+                    <Route path="/SignUp" element={<SignUpPage />} />
                 </Routes>
             </BrowserRouter>   
         </div>

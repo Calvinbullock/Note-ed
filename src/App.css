@@ -125,6 +125,10 @@ login page component
     width: 80%;
 }
 
+#alt-sign-up {
+    font-size: .8rem;
+}
+
 /* ==============================================================================
 Default react page styling
 -- REMOVE?? --
