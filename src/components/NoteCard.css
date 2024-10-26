@@ -8,9 +8,16 @@ note card Component
     border-radius: 3px;
 
     background-color: #f0f0f0;
-    width: 90%;
-    margin: 1.5rem;
+    width: 80%;
 
     padding: 1rem;
     padding-top: .1rem;
+}
+
+
+@media (max-width: 600px) {
+    .noteCard {
+        margin-top: .1rem;
+        margin-bottom: .1rem;
+    }
 }

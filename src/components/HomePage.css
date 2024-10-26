@@ -7,9 +7,10 @@ Home Component
 }
 
 #note-section {
-    margin: auto;
     justify-content: space-evenly;
     display: flex;
+    margin: auto;
+    margin-top: 2rem;
 }
 
 #home-edit-note {
@@ -26,3 +27,19 @@ Home Component
     gap: 20px;
 }
 
+@media (max-width: 600px) {
+    #note-section {
+        display: block;
+        margin: auto;
+        margin-top: 2rem;
+    }
+
+    #home-edit-note {
+        margin: auto;
+        width: 60%;
+    }
+
+    #note-contianer {
+        margin: auto;
+    }
+}

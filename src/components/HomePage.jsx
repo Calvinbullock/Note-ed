@@ -1,22 +1,27 @@
 
 import React from "react";
 import "./HomePage.css"
-//import ReactGridLayout from "react-grid-layout";
 
 import Nav from "./nav/Nav";
 import NoteCard from "./NoteCard";
 import NoteEditor from "./NoteEditor";
 
 export default function HomePage({noteData}) {
-
     return (
         <div className="home page">
             <Nav/>
-            <NoteEditor />
             
-            {noteData != null && noteData.map((element, index) => (
-                <NoteCard key={index} {...element} />
-            ))}
+            <section id="note-section">
+                <div id="home-edit-note">
+                    <NoteEditor />
+                </div>
+
+                <div id="note-contianer">
+                    {noteData != null && noteData.map((element, index) => (
+                        <NoteCard key={index} {...element} />
+                    ))}
+                </div>
+            </section>   
         </div>
     );
 }
