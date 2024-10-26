@@ -5,6 +5,8 @@ import { collection, addDoc} from "firebase/firestore";
 // src js fies
 import { db, auth } from "./../config/firebase";
 
+import "./NoteEditor.css"
+
 export default function NoteEditor() {
     const [ titleValue, setTitleEntry ] = useState("")
     const [ dateValue, setDateEntry ] = useState("")
@@ -73,3 +75,4 @@ export default function NoteEditor() {
         </div>
     );
 }
+

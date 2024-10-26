@@ -1,14 +1,16 @@
 
 import React from "react";
 import Nav from "./../nav/Nav";
-import Login from "./Login";
+import SignUp from "./SignUp";
+
+import "./SignIn-signUp-page.css"
 
 export default function SignInPage() {
 
     return (
         <div class="login-page page">
             <Nav />
-            <Login />
+            <SignUp/>
         </div>
     );
 }

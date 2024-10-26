@@ -1,0 +1,21 @@
+/* ==============================================================================
+signUp / signIn - component
+============================================================================== */
+.login-box {
+    border: 1px solid black;
+    border-radius: 2px;
+    width: 20%;
+
+    margin: auto;
+    margin-top: 1rem;
+    padding: 2rem;
+}
+
+.login-box input {
+    margin: .5rem;
+    width: 80%;
+}
+
+#alt-sign-up {
+    font-size: .8rem;
+}

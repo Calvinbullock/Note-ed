@@ -1,0 +1,46 @@
+
+/* ==============================================================================
+Nav Component
+============================================================================== */
+.nav {
+    padding: 1%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav img, .nav input, .nav a {
+    margin: 0 5%;
+    margin-top: 0.5%;
+}
+
+#nav-search {
+    border: none;
+    border-radius: 3px;
+
+    background-color: #f0f0f0;
+    padding: 8px;
+    width: 50%;
+}
+
+#dark-mode-switch {
+    border: none;
+    border-radius: 3px;
+
+    background-color: #f0f0f0;
+    margin-top: 0.5%;
+    margin-left: 1rem;
+    padding: .5rem;
+    width: 10%;
+}
+
+#signIn-button {
+    border: none;
+    border-radius: 3px;
+
+    background-color: #f0f0f0;
+    margin-top: 0.5%;
+    padding: 8px;
+    width: 8%;
+}

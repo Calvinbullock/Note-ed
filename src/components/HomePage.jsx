@@ -1,5 +1,7 @@
 
 import React from "react";
+import "./HomePage.css"
+//import ReactGridLayout from "react-grid-layout";
 
 import Nav from "./nav/Nav";
 import NoteCard from "./NoteCard";

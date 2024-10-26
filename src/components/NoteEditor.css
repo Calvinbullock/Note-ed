@@ -1,0 +1,41 @@
+
+/* ==============================================================================
+* note Editor Component
+============================================================================== */
+
+.noteEditor {
+    margin: auto;
+    border: black solid 1px;
+    border-radius: 3px;
+
+    background-color: #f0f0f0;
+    width: 90%;
+    margin: 1.5rem;
+
+    padding: 1rem;
+    padding-top: .1rem;
+}
+
+.noteEditor input {
+    border: none;
+    border-radius: 3px;
+    outline: none;
+
+    background-color: #f0f0f0;
+    padding: 8px;
+    width: 100%;
+}
+
+.noteEditor textarea {
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    min-height: 50px;
+    resize: vertical;
+    resize: none;
+
+    background-color: #f0f0f0;
+    padding: 8px;
+    width: 100%;
+}
+

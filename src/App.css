@@ -1,62 +1,6 @@
 
 
 /* ==============================================================================
-Home Component
-============================================================================== */
-.page {
-    max-width: 1500px;
-}
-
-
-
-/* ==============================================================================
-Nav Component
-============================================================================== */
-
-.nav {
-    padding: 1%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav img, .nav input, .nav a {
-    margin: 0 5%;
-    margin-top: 0.5%;
-}
-
-#nav-search {
-    border: none;
-    border-radius: 3px;
-
-    background-color: #f0f0f0;
-    padding: 8px;
-    width: 50%;
-}
-
-#dark-mode-switch {
-    border: none;
-    border-radius: 3px;
-
-    background-color: #f0f0f0;
-    margin-top: 0.5%;
-    margin-left: 1rem;
-    padding: .5rem;
-    width: 10%;
-}
-
-#signIn-button {
-    border: none;
-    border-radius: 3px;
-
-    background-color: #f0f0f0;
-    margin-top: 0.5%;
-    padding: 8px;
-    width: 8%;
-}
-
-/* ==============================================================================
 * note Editor Component
 ============================================================================== */
 
@@ -66,7 +10,7 @@ Nav Component
     border-radius: 3px;
 
     background-color: #f0f0f0;
-    width: 20%;
+    width: 90%;
     margin: 1.5rem;
 
     padding: 1rem;
@@ -94,22 +38,6 @@ Nav Component
     background-color: #f0f0f0;
     padding: 8px;
     width: 100%;
-}
-
-/* ==============================================================================
-note card Component
-============================================================================== */
-
-.noteCard {
-    border: black solid 1px;
-    border-radius: 3px;
-
-    background-color: #f0f0f0;
-    width: 20%;
-    margin: 1.5rem;
-
-    padding: 1rem;
-    padding-top: .1rem;
 }
 
 /* ==============================================================================

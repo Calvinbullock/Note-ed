@@ -3,6 +3,8 @@ import React from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { auth } from "./../../config/firebase";
 
+import "./Nav.css"
+
 export default function Nav() {
     
     const navigate = useNavigate();

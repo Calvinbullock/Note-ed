@@ -3,6 +3,8 @@ import React from "react";
 import { db } from "../config/firebase";
 import { deleteDoc, doc } from "firebase/firestore";
 
+import "./NoteCard.css"
+
 export default function NoteCard(props) {
 
     const deleteNote = async () => {
