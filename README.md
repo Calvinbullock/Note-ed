@@ -21,10 +21,10 @@ Run testing  / dev server
 [Live Site](https://noted-eeafd.web.app) 
 
 # TODO 
-- move all firebase functions to utils?
 - refetch / render note every x seconds 
 - Auth
-    - only signed in users can accuses the db
+    - add auth to app context
+    - if not loged in send user right to login
     - check the user is supposed to have accuses to the note
 
 
