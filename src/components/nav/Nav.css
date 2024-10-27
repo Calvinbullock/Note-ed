@@ -10,7 +10,9 @@ Nav Component
     align-items: center;
 }
 
-.nav img, .nav input, .nav a {
+.nav img,
+.nav input,
+.nav a {
     margin: 0 5%;
     margin-top: 0.5%;
 }
@@ -33,6 +35,13 @@ Nav Component
     margin-left: 1rem;
     padding: .5rem;
     width: 10%;
+}
+
+.dark-theme .nav #nav-search, 
+.dark-theme .nav #signIn-button, 
+.dark-theme .nav #dark-mode-switch {
+    background: #2f2c31;
+    color: #ffccff;
 }
 
 #signIn-button {

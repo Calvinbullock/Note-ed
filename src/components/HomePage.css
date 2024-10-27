@@ -6,6 +6,21 @@ Home Component
     max-width: 1500px;
 }
 
+.dark-theme {
+    background: #140033;   
+    color: #ffccff;
+}
+
+.dark-theme button {
+    background: #2f2c31;
+    color: #ffccff;
+}
+
+.light-theme {
+    background: white;   
+    color: black;
+}
+
 #note-section {
     justify-content: space-evenly;
     display: flex;

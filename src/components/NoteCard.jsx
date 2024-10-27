@@ -2,10 +2,13 @@
 import React from "react";
 import { db } from "../config/firebase";
 import { deleteDoc, doc } from "firebase/firestore";
+import { useAppContext } from './AppContext';
 
 import "./NoteCard.css"
 
 export default function NoteCard(props) {
+
+    const { theme } = useAppContext();
 
     const deleteNote = async () => {
         try {
@@ -17,7 +20,7 @@ export default function NoteCard(props) {
     };
     
     return (
-        <div className="noteCard" id={props.id}>
+        <div className={`noteCard ${theme}`} id={props.id}>
             <h3>{props.title}</h3>
             <p>{props.date}</p>
             <p>{props.text}</p>

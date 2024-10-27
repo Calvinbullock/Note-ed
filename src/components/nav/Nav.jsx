@@ -2,12 +2,14 @@
 import React from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { auth } from "./../../config/firebase";
+import { useAppContext } from "../AppContext"
 
 import "./Nav.css"
 
 export default function Nav() {
     
     const navigate = useNavigate();
+    const { toggleTheme } = useAppContext();
 
     const handleSignIn = () => {
         navigate('/signIn');
@@ -15,11 +17,12 @@ export default function Nav() {
 
     const handleDarkModeChange = () => {
         console.log("TODO: in Nav.jsx");
+        toggleTheme();
     }
 
     const handleSearch = () => {
         console.log("TODO: in Nav.jsx");
-    }
+    };
 
     return (
         <div className="nav">
@@ -31,8 +34,6 @@ export default function Nav() {
             ) : (
                 <button onClick={() => auth.signOut() } id="signIn-button" type="">Sign Out</button>
             )}
-
-
             <button onClick={handleDarkModeChange} id="dark-mode-switch" type="">Dark Mode</button>
         </div>
     );

@@ -5,10 +5,14 @@ import "./HomePage.css"
 import Nav from "./nav/Nav";
 import NoteCard from "./NoteCard";
 import NoteEditor from "./NoteEditor";
+import { useAppContext } from './AppContext';
 
 export default function HomePage({noteData}) {
+
+    const { theme } = useAppContext();
+
     return (
-        <div className="home page">
+     <div className={`home page ${theme}`}>
             <Nav/>
             
             <section id="note-section">
@@ -25,15 +29,3 @@ export default function HomePage({noteData}) {
         </div>
     );
 }
-
-// TODO: need to add an event listener for a new note added then re render the
-//      note list
-// TODO: need an idea for each note
-
-// NOTE: layout like this???
-//     ___________________
-//     |______nav________|
-//     |      | note note|
-//     | edit | note note|
-//     |      | note note|
-//     -------------------

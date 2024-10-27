@@ -3,6 +3,13 @@
 * note Editor Component
 ============================================================================== */
 
+.dark-theme .noteEditor, 
+.dark-theme .noteEditor input, 
+.dark-theme .noteEditor textarea {
+    background: #2f2c31;
+    color: #ffccff;
+}
+
 .noteEditor {
     margin: auto;
     border: black solid 1px;

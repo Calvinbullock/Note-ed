@@ -4,16 +4,23 @@ note card Component
 ============================================================================== */
 
 .noteCard {
-    border: black solid 1px;
     border-radius: 3px;
-
-    background-color: #f0f0f0;
     width: 80%;
 
     padding: 1rem;
     padding-top: .1rem;
 }
 
+.light-theme .noteCard {
+    background-color: #f0f0f0;
+    border: black solid 1px;
+}
+
+.dark-theme .noteCard {
+    border: #ffccff solid 1px;
+    background: #2f2c31;
+    color: #ffccff;
+}
 
 @media (max-width: 600px) {
     .noteCard {

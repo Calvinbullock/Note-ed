@@ -12,6 +12,7 @@ import { collection, getDocs } from "firebase/firestore";
 import HomePage from "./components/HomePage";
 import SignInPage from "./components/signIn-SignUp/SignInPage";
 import SignUpPage from "./components/signIn-SignUp/SignUpPage";
+import { AppProvider } from './components/AppContext';
 
 // main function
 export default function App() {
@@ -40,7 +41,7 @@ export default function App() {
     }, []); // NOTE: [notesCollectionRef, noteData]
 
     return (
-        <div>
+        <AppProvider>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<HomePage noteData={noteData}/>} />
@@ -48,6 +49,6 @@ export default function App() {
                     <Route path="/SignUp" element={<SignUpPage />} />
                 </Routes>
             </BrowserRouter>   
-        </div>
+        </AppProvider>
     );
 }

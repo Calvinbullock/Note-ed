@@ -1,65 +1,11 @@
 
-
-/* ==============================================================================
-* note Editor Component
-============================================================================== */
-
-.noteEditor {
-    margin: auto;
-    border: black solid 1px;
-    border-radius: 3px;
-
-    background-color: #f0f0f0;
-    width: 90%;
-    margin: 1.5rem;
-
-    padding: 1rem;
-    padding-top: .1rem;
+main {
+    max-width: 1500px;
 }
 
-.noteEditor input {
-    border: none;
-    border-radius: 3px;
-    outline: none;
-
-    background-color: #f0f0f0;
-    padding: 8px;
-    width: 100%;
-}
-
-.noteEditor textarea {
-    border: none;
-    border-radius: 3px;
-    outline: none;
-    min-height: 50px;
-    resize: vertical;
-    resize: none;
-
-    background-color: #f0f0f0;
-    padding: 8px;
-    width: 100%;
-}
-
-/* ==============================================================================
-login page component
-============================================================================== */
-.login-box {
-    border: 1px solid black;
-    border-radius: 2px;
-    width: 20%;
-
-    margin: auto;
-    margin-top: 1rem;
-    padding: 2rem;
-}
-
-.login-box input {
-    margin: .5rem;
-    width: 80%;
-}
-
-#alt-sign-up {
-    font-size: .8rem;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 /* ==============================================================================
