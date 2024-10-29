@@ -21,11 +21,17 @@ Run testing  / dev server
 [Live Site](https://noted-eeafd.web.app) 
 
 # TODO 
-- refetch / render note every x seconds 
+- re - fetch / render - notes every x seconds 
+    - clear note editor on submit
+- keep dark mode on refresh
 - Auth
     - add auth to app context
-    - if not loged in send user right to login
+    - if not logged in send user right to login
     - check the user is supposed to have accuses to the note
+- note styling 
+    - set delete / edit buttons to be absolute (at bottom left) 
+    - see about getting note content to stay in it's original format (not all Squished)
+    - 
 
 
 # Milestone
