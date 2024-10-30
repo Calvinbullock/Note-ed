@@ -6,7 +6,7 @@ note card Component
 ============================================================================== */
 
 .noteCard {
-    border-radius: 3px;
+    border-radius: var(--corner-radius);
     width: 80%;
 
     padding: 1rem;
@@ -22,6 +22,16 @@ note card Component
     border: var(--text-dark) solid 1px;
     background: var(--background-dark);
     color: var(--text-dark);
+}
+
+.dark-theme .noteCard button {
+    border-radius: var(--corner-radius);
+    background: var(--note-button-color-dark);
+}
+
+.noteCard button {
+    border-radius: var(--corner-radius);
+    background: var(--note-button-color-light);
 }
 
 @media (max-width: 600px) {

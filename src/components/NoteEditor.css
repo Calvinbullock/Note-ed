@@ -21,7 +21,7 @@
 .noteEditor {
     margin: auto;
     border: var(--text-light) solid 1px;
-    border-radius: 3px;
+    border-radius: var(--corner-radius);
 
     background-color: var(--background-light);
     width: 90%;
@@ -32,17 +32,17 @@
 
 .noteEditor input {
     border: none;
-    border-radius: 3px;
+    border-radius: var(--corner-radius);
     outline: none;
 
     background-color: var(--background-light);
     padding: 8px;
-    width: 100%;
+    width: 90%;
 }
 
 .noteEditor textarea {
     border: none;
-    border-radius: 3px;
+    border-radius: var(--corner-radius);
     outline: none;
     min-height: 50px;
     resize: vertical;
@@ -51,5 +51,15 @@
     background-color: var(--background-light);
     padding: 8px;
     width: 100%;
+}
+
+.noteEditor button {
+    border-radius: var(--corner-radius);
+    background: var(--note-button-color-light);
+}
+
+.dark-theme .noteEditor button {
+    border-radius: var(--corner-radius);
+    background: var(--note-button-color-dark);
 }
 

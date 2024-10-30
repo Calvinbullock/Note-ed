@@ -29,7 +29,7 @@ Nav Component
 
 #nav-search {
     border: none;
-    border-radius: 3px;
+    border-radius: var(--corner-radius);
 
     background-color: var(--nav-input-light);
     padding: 8px;
@@ -38,7 +38,7 @@ Nav Component
 
 #dark-mode-switch {
     border: none;
-    border-radius: 3px;
+    border-radius: var(--corner-radius);
 
     background-color: var(--nav-input-light);
     margin-top: 0.5%;
@@ -56,7 +56,7 @@ Nav Component
 
 #signIn-button {
     border: none;
-    border-radius: 3px;
+    border-radius: var(--corner-radius);
 
     background-color: var(--nav-input-light);
     margin-top: 0.5%;

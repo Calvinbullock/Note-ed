@@ -3,16 +3,14 @@
     --background-light: white;
     --text-light: black;
     --nav-input-light: #f0f0f0;
+    --note-button-color-light: #f0f0f0;
 
     --background-dark: #140033; /* purple-ish */
     --text-dark: #ffccff;
     --nav-input-dark: #2f2c31;
+    --note-button-color-dark: #140033;
 
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --danger-color: #dc3545;
-    --warning-color: #ffc107;
+    --corner-radius: 20px;
 }
 
 main {
