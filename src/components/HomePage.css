@@ -1,4 +1,6 @@
 
+@import url('../App.css');
+
 /* ==============================================================================
 Home Component
 ============================================================================== */
@@ -7,18 +9,18 @@ Home Component
 }
 
 .dark-theme {
-    background: #140033;   
-    color: #ffccff;
+    background: var(--background-dark);
+    color: var(--text-dark);
 }
 
 .dark-theme button {
-    background: #2f2c31;
-    color: #ffccff;
+    background: var(--background-dark);
+    color: var(--text-dark);
 }
 
 .light-theme {
-    background: white;   
-    color: black;
+    background: var(--background-light);   
+    color: var(--text-light);
 }
 
 #note-section {
