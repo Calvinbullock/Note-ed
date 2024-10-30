@@ -16,7 +16,7 @@ signUp / signIn - component
 
 .login-box {
     border: 1px solid var(--text-light);
-    border-radius: 2px;
+    border-radius: var(--corner-radius);
     width: 20%;
 
     margin: auto;
@@ -24,7 +24,12 @@ signUp / signIn - component
     padding: 2rem;
 }
 
+.login-box button {
+    border-radius: var(--corner-radius);
+}
+
 .login-box input {
+    border-radius: var(--corner-radius);
     margin: .5rem;
     width: 80%;
 }
