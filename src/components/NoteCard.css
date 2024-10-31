@@ -11,6 +11,15 @@ note card Component
 
     padding: 1rem;
     padding-top: .1rem;
+    padding-bottom: 2rem;
+
+    position: relative;
+}
+
+.delete-note-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
 
 .light-theme .noteCard {

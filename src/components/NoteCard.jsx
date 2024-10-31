@@ -24,7 +24,14 @@ export default function NoteCard(props) {
             <p>Note From: {props.date}</p>
             <p>Due On: {props.dueDate}</p>
             <p>{props.text}</p>
-            <button aria-label="Delete Note" onClick={deleteNote} type="deleteNote">DELETE</button>
+
+            <button 
+                class="delete-note-button"
+                aria-label="Delete Note"
+                onClick={deleteNote}
+                type="deleteNote"
+            >DELETE</button>
+
         </div>
     );
 }
