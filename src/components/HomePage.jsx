@@ -36,6 +36,7 @@ export default function HomePage({noteData}) {
                 </div>
 
                 <div id="note-contianer">
+                    <label htmlFor="select-search">Sort By   </label>
                     <select id="select-search" value={selectedSort} onChange={handleSortChange}>
                         <option value="A-Z">A-Z</option>
                         <option value="Z-A">Z-A</option>
