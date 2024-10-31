@@ -7,8 +7,6 @@ export const AppProvider = ({ children }) => {
     const [theme, setTheme] = useState("light-theme");
 
     const toggleTheme = () => {
-        console.log("here");
-
         setTheme(theme === "light-theme" ? "dark-theme" : "light-theme");
         if (theme === "dark-theme") {
             document.body.classList.remove("dark-theme");
