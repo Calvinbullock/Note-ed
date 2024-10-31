@@ -31,9 +31,19 @@ function getEpochTimeInSeconds() {
     return Math.floor(Date.now() / 1000);
 }
 
+function formatEpochTime(epochTime) {
+    const date = new Date(epochTime * 1000); // Convert to milliseconds
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2,   
+        '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;   
+}
+
 export { 
     setNotesLocalStorage, 
     getNotesFromLocalStorage, 
     deleteNoteFromLocal,
     getEpochTimeInSeconds,
+    formatEpochTime,
 }

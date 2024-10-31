@@ -5,11 +5,12 @@ import { collection, addDoc} from "firebase/firestore";
 // src js fies
 import { db, auth } from "./../config/firebase";
 
+import { formatEpochTime } from "../utils/utils";
 import "./NoteEditor.css"
 
 export default function NoteEditor() {
     const [ titleValue, setTitleEntry ] = useState("")
-    const [ dateValue, setDateEntry ] = useState("")
+    const [ dueDateValue, setDueDateEntry ] = useState("")
     const [ textValue, setTextEntry ] = useState("")
 
     const notesCollectionRef = collection(db, "Notes");
@@ -17,8 +18,8 @@ export default function NoteEditor() {
     const handleTitleEntry = (event) => {
         setTitleEntry(event.target.value);
     }
-    const handleDateChange = (event) => {
-        setDateEntry(event.target.value);
+    const handleDueDateChange = (event) => {
+        setDueDateEntry(event.target.value);
     }
     const handleTextEntry = (event) => {
         setTextEntry(event.target.value);
@@ -36,10 +37,13 @@ export default function NoteEditor() {
     }, []);
 
     const submitNote = async () => {
+        const addDate = Date.now();
         try {
             await addDoc(notesCollectionRef, {
                 title: titleValue,
-                date: dateValue,
+                date: formatEpochTime(dueDateValue),
+                dateEpoch: addDate,
+                dueDate: dueDateValue,
                 text: textValue,
                 userId: auth?.currentUser?.uid,
             });
@@ -59,12 +63,12 @@ export default function NoteEditor() {
                 placeholder="Title"
             /><br/>
             <input 
-                id="note-date-entry" 
+                id="note-due-date-entry" 
                 type="text" 
-                name="dateEntry" 
-                value={dateValue} 
-                onChange={handleDateChange} 
-                placeholder="Date"
+                name="dueDateEntry" 
+                value={dueDateValue} 
+                onChange={handleDueDateChange} 
+                placeholder="Due Date"
             /><br/>
             <textarea 
                 value={textValue} 

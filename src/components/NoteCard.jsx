@@ -5,7 +5,6 @@ import { deleteDoc, doc } from "firebase/firestore";
 import { useAppContext } from './AppContext';
 
 import "./NoteCard.css"
-
 export default function NoteCard(props) {
 
     const { theme } = useAppContext();
@@ -22,7 +21,8 @@ export default function NoteCard(props) {
     return (
         <div className={`noteCard ${theme}`} id={props.id}>
             <h3>{props.title}</h3>
-            <p>{props.date}</p>
+            <p>Note From: {props.date}</p>
+            <p>Due On: {props.dueDate}</p>
             <p>{props.text}</p>
             <button onClick={deleteNote} type="deleteNote">DELETE</button>
         </div>
