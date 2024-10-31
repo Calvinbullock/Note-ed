@@ -1,6 +1,5 @@
 
 // react
-import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 
@@ -9,6 +8,7 @@ import { db } from "./config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 // Components
+import './App.css';
 import HomePage from "./components/HomePage";
 import SignInPage from "./components/signIn-SignUp/SignInPage";
 import SignUpPage from "./components/signIn-SignUp/SignUpPage";
