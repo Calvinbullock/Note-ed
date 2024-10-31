@@ -32,9 +32,8 @@ Run testing  / dev server
     - if not logged in send user right to login
     - check the user is supposed to have accuses to the note
 - note styling 
-    - set delete / edit buttons to be absolute (at bottom left) 
     - see about getting note content to stay in it's original format (not all Squished)
-    - 
+        - make sure really really long words wrap properly
 ```
 
 
