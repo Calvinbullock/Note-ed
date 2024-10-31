@@ -24,6 +24,8 @@ Run testing  / dev server
 ```
 - re - fetch / render - notes every x seconds 
     - clear note editor on submit
+    - sort options for notes / search
+    - click and drag??
 - keep dark mode on refresh
 - Auth
     - add auth to app context
