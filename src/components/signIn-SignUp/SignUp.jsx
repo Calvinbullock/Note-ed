@@ -31,6 +31,7 @@ export default function SignUp() {
     return (
         <div class="login-box">
             <input 
+                aria-label="Enter Account Email"
                 type="email" 
                 name="email" 
                 value={emailValue}
@@ -38,13 +39,14 @@ export default function SignUp() {
                 placeholder="email"
             /><br/>
             <input 
+                aria-label="Enter Account Password"
                 type="password" 
                 name="" 
                 value={passwordValue}
                 onChange={handlePasswordEntry}
                 placeholder="password"
             /><br/>
-            <button onClick={signUp} type="button">Sign Up</button>
+            <button aria-label="Sign Up For Account" onClick={signUp} type="button">Sign Up</button>
         </div>
     )
 }

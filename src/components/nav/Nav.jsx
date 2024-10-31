@@ -27,14 +27,14 @@ export default function Nav() {
     return (
         <div className="nav">
             <Link to="/"><img src="" alt="logo" /></Link>
-            <input onChange={handleSearch} id="nav-search" type="" name="search" value="search" placeholder="search"/>
+            <input aria-label="searchBar" onChange={handleSearch} id="nav-search" type="" name="search" value="search" placeholder="search"/>
 
             {(auth.currentUser == null) ? (
-                <button onClick={handleSignIn} id="signIn-button" type="">Sign In</button>
+                <button aria-label="SignIn" onClick={handleSignIn} id="signIn-button" type="">Sign In</button>
             ) : (
-                <button onClick={() => auth.signOut() } id="signIn-button" type="">Sign Out</button>
+                <button aria-label="SignOut" onClick={() => auth.signOut() } id="signIn-button" type="">Sign Out</button>
             )}
-            <button onClick={handleDarkModeChange} id="dark-mode-switch" type="">Dark Mode</button>
+            <button aria-label="Dark Mode Toggle" onClick={handleDarkModeChange} id="dark-mode-switch" type="">Dark Mode</button>
         </div>
     );
 }

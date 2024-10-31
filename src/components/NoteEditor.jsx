@@ -55,6 +55,7 @@ export default function NoteEditor() {
     return (
         <div className="noteEditor">
             <input 
+                aria-label="Input Note title"
                 id="note-title-entry" 
                 type="text" 
                 name="titleEntry" 
@@ -63,6 +64,7 @@ export default function NoteEditor() {
                 placeholder="Title"
             /><br/>
             <input 
+                aria-label="Input Note Due Date"
                 id="note-due-date-entry" 
                 type="text" 
                 name="dueDateEntry" 
@@ -71,11 +73,12 @@ export default function NoteEditor() {
                 placeholder="Due Date"
             /><br/>
             <textarea 
+                aria-label="Write Note"
                 value={textValue} 
                 onChange={handleTextEntry}
                 placeholder="take a note"
             ></textarea><br/>
-            <button type="" onClick={submitNote}>Add</button>
+            <button aria-label="Submit Note" onClick={submitNote}>Add</button>
         </div>
     );
 }
