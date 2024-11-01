@@ -29,7 +29,6 @@ export default function HomePage({noteData}) {
     return (
      <div className={`home page ${theme}`}>
             <Nav/>
-            
             <section id="note-section">
                 <div id="home-edit-note">
                     <NoteEditor />

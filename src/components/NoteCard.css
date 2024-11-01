@@ -8,6 +8,7 @@ note card Component
 .noteCard {
     border-radius: var(--corner-radius);
     width: 80%;
+    margin: auto;
 
     padding: 1rem;
     padding-top: .1rem;

@@ -22,7 +22,7 @@ export default function NoteCard(props) {
         <div className={`noteCard ${theme}`} id={props.id}>
             <h3>{props.title}</h3>
             <p>Note From: {props.date}</p>
-            <p>Due On: {props.dueDate}</p>
+            {(props.dueDate !== "") && <p>Due On: {props.dueDate}</p>}
             <p>{props.text}</p>
 
             <button 
