@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 // firebase
 import { db } from "./config/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, onSnapshot} from "firebase/firestore";
 
 // Components
 import './App.css';
@@ -21,24 +21,25 @@ export default function App() {
 
     // get all Notes from DB
     useEffect(() => {
-        const getNoteList = async () => {
+        const unsubscribe = onSnapshot(notesCollectionRef, (snapshot) => {
             try {
                 // TODO: only get Notes that match user ID
                 //const userId = auth?.currentUser.uid;
                 //const notesCollectionRef = collection(db, "notes");
                 //const q = query(notesCollectionRef, where("userId", "==", userId));
                 //const data = await getDocs(q);
+                
+                const noteData = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
 
-                const data = await getDocs(notesCollectionRef);
-                setNoteData(data.docs.map((doc) => ({id: doc.id, ...doc.data() })));
-
-            } catch (err) {
-                console.error(err);
-            }
-        }
-        getNoteList();
-    // eslint-disable-next-line
-    }, []); // NOTE: [notesCollectionRef, noteData]
+                setNoteData(noteData);   
+            } catch (err) { console.log(err); }
+        });
+        // Clean up the listener when the component unmounts
+        return () => unsubscribe();
+    }, [notesCollectionRef]);
 
     return (
         <AppProvider>
