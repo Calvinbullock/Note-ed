@@ -17,12 +17,6 @@ note card Component
     position: relative;
 }
 
-.delete-note-button {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-}
-
 .light-theme .noteCard {
     background-color: var(--background-light);
     border: var(--text-light) solid 1px;
@@ -34,6 +28,14 @@ note card Component
     color: var(--text-dark);
 }
 
+/* ------------ buttons ------------ */
+
+.delete-note-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
 .dark-theme .noteCard button {
     border-radius: var(--corner-radius);
     background: var(--note-button-color-dark);
@@ -43,6 +45,16 @@ note card Component
     border-radius: var(--corner-radius);
     background: var(--note-button-color-light);
 }
+
+.noteCard button:hover {
+    background: var(--hover-button-bg);
+}
+
+.dark-theme .noteCard button:hover {
+    background: var(--hover-button-bg-dark);
+}
+
+/* ------------ media query ------------ */
 
 @media (max-width: 600px) {
     .noteCard {
