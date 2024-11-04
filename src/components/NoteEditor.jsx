@@ -5,15 +5,15 @@ import { collection, addDoc} from "firebase/firestore";
 // src js fies
 import { db, auth } from "./../config/firebase";
 
-import { formatEpochTime } from "../utils/utils";
+import { formatEpochTime, clearInput} from "../utils/utils";
 import "./NoteEditor.css"
 
 export default function NoteEditor() {
+    const notesCollectionRef = collection(db, "Notes");
+
     const [ titleValue, setTitleEntry ] = useState("")
     const [ dueDateValue, setDueDateEntry ] = useState("")
     const [ textValue, setTextEntry ] = useState("")
-
-    const notesCollectionRef = collection(db, "Notes");
 
     const handleTitleEntry = (event) => {
         setTitleEntry(event.target.value);
@@ -24,7 +24,8 @@ export default function NoteEditor() {
     const handleTextEntry = (event) => {
         setTextEntry(event.target.value);
     }
-
+    
+    // auto adjust textarea height to fit content
     useEffect(() => {
         const textarea = document.querySelector('.noteEditor textarea');
         const container = textarea.parentNode;
@@ -47,6 +48,10 @@ export default function NoteEditor() {
                 text: textValue,
                 userId: auth?.currentUser?.uid,
             });
+            clearInput("note-title-entry");
+            clearInput("note-due-date-entry");
+            clearInput("note-text-entry");
+
         } catch (err) {
             console.error(err);
         }
@@ -74,6 +79,7 @@ export default function NoteEditor() {
             /><br/>
             <textarea 
                 aria-label="Write Note"
+                id="note-text-entry" 
                 value={textValue} 
                 onChange={handleTextEntry}
                 placeholder="take a note"

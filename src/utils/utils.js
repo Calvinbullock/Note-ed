@@ -1,4 +1,14 @@
 
+/* ================================================================== 
+ * CLEAR INPUT 
+ * ================================================================== */
+function clearInput(inputId) {
+  const inputElement = document.getElementById(inputId);
+  if (inputElement) {
+    inputElement.value = '';
+  }
+}
+
 function getNotesFromLocalStorage() {
     const noteListString = localStorage.getItem('noteList');
 
@@ -41,6 +51,7 @@ function formatEpochTime(epochTime) {
 }
 
 export { 
+    clearInput,
     setNotesLocalStorage, 
     getNotesFromLocalStorage, 
     deleteNoteFromLocal,
