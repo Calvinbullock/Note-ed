@@ -22,18 +22,22 @@ Run testing  / dev server
 
 # TODO 
 ```
-- re - fetch / render - notes every x seconds 
-    - clear note editor on submit
+- notes
     - sort options for notes / search
     - click and drag??
+
 - keep dark mode on refresh
+- buttons need a click indication
+
 - Auth
     - add auth to app context
     - if not logged in send user right to login
     - check the user is supposed to have accuses to the note
+
 - note styling 
     - see about getting note content to stay in it's original format (not all Squished)
-        - make sure really really long words wrap properly
+    - make sure really really long words wrap properly
+    - keep editor in place as user scrolls
 ```
 
 
