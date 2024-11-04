@@ -4,11 +4,13 @@
     --text-light: black;
     --nav-input-light: #f0f0f0;
     --note-button-color-light: #f0f0f0;
+    --hover-button-bg: #d9d9d9;
 
     --background-dark: #140033; /* purple-ish */
     --text-dark: #ffccff;
     --nav-input-dark: #2f2c31;
     --note-button-color-dark: #140033;
+    --hover-button-bg-dark: #b380ff;
 
     --corner-radius: 20px;
 }
@@ -18,8 +20,8 @@ main {
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* ==============================================================================
