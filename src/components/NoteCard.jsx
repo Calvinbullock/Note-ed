@@ -26,7 +26,7 @@ export default function NoteCard(props) {
             <p>{props.text}</p>
 
             <button 
-                class="delete-note-button"
+                className="delete-note-button"
                 aria-label="Delete Note"
                 onClick={deleteNote}
                 type="deleteNote"
