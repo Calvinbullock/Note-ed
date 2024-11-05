@@ -29,7 +29,7 @@ export default function SignUp() {
     };
 
     return (
-        <div class="login-box">
+        <div className="login-box">
             <input
                 aria-label="Enter Account Email"
                 type="email"

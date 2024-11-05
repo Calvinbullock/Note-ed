@@ -1,6 +1,6 @@
 
-/* ================================================================== 
- * CLEAR INPUT 
+/* ==================================================================
+ * CLEAR INPUT
  * ================================================================== */
 function clearInput(inputId) {
   const inputElement = document.getElementById(inputId);
@@ -28,7 +28,7 @@ function setNotesLocalStorage(item) {
 
     noteList.push(item);
     localStorage.setItem("noteList", JSON.stringify(noteList))
-}       
+}
 
 function deleteNoteFromLocal(noteID) {
     let noteList = getNotesFromLocalStorage()
@@ -44,16 +44,15 @@ function getEpochTimeInSeconds() {
 function formatEpochTime(epochTime) {
     const date = new Date(epochTime * 1000); // Convert to milliseconds
     const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2,   
-        '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear();
-    return `${day}/${month}/${year}`;   
+    return `${day}/${month}/${year}`;
 }
 
-export { 
+export {
     clearInput,
-    setNotesLocalStorage, 
-    getNotesFromLocalStorage, 
+    setNotesLocalStorage,
+    getNotesFromLocalStorage,
     deleteNoteFromLocal,
     getEpochTimeInSeconds,
     formatEpochTime,

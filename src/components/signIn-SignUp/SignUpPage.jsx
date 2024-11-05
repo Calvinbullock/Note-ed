@@ -8,7 +8,7 @@ import "./SignIn-signUp-page.css"
 export default function SignInPage() {
 
     return (
-        <div class="login-page page">
+        <div className="login-page page">
             <Nav />
             <SignUp/>
         </div>
