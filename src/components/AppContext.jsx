@@ -3,11 +3,23 @@ import React, { createContext, useContext, useState } from 'react';
 
 const AppContext = createContext();
 
+// get the theme from local storage
+function getThemeFromLocalStorage() {
+    let theme = localStorage.getItem('theme');
+    if (theme == null) {
+        theme = "light-theme";
+    }
+    return theme;
+}
+
+
 export const AppProvider = ({ children }) => {
-    const [theme, setTheme] = useState("light-theme");
+    const [theme, setTheme] = useState(getThemeFromLocalStorage);
+    localStorage.setItem('theme', theme);
 
     const toggleTheme = () => {
         setTheme(theme === "light-theme" ? "dark-theme" : "light-theme");
+
         if (theme === "dark-theme") {
             document.body.classList.remove("dark-theme");
             document.body.classList.add("light-theme");

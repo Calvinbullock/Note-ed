@@ -5,7 +5,7 @@
 * note Editor Component
 ============================================================================== */
 
-.dark-theme .noteEditor, 
+.dark-theme .noteEditor,
 .dark-theme .noteEditor input,
 .dark-theme .noteEditor textarea {
     border: var(--text-dark) solid 1px;
@@ -53,13 +53,23 @@
     width: 100%;
 }
 
+/* ------------ buttons ------------ */
+
 .noteEditor button {
     border-radius: var(--corner-radius);
     background: var(--note-button-color-light);
 }
 
+.noteEditor button:hover {
+    background: var(--hover-button-bg);
+}
+
 .dark-theme .noteEditor button {
     border-radius: var(--corner-radius);
     background: var(--note-button-color-dark);
+}
+
+.dark-theme .noteEditor button:hover {
+    background: var(--hover-button-bg-dark);
 }
 

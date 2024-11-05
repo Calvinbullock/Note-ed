@@ -19,7 +19,7 @@ Home Component
 }
 
 .light-theme {
-    background: var(--background-light);   
+    background: var(--background-light);
     color: var(--text-light);
 }
 
@@ -50,7 +50,7 @@ Home Component
     background: var(--background-light);
     margin-bottom: 1rem;
     width: 30%;
-    
+
     border-radius: var(--corner-radius);
     padding: .2rem;
     padding-left: 1rem;

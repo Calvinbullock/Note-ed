@@ -29,19 +29,19 @@ export default function SignUp() {
     };
 
     return (
-        <div class="login-box">
-            <input 
+        <div className="login-box">
+            <input
                 aria-label="Enter Account Email"
-                type="email" 
-                name="email" 
+                type="email"
+                name="email"
                 value={emailValue}
                 onChange={handleEmailEntry}
                 placeholder="email"
             /><br/>
-            <input 
+            <input
                 aria-label="Enter Account Password"
-                type="password" 
-                name="" 
+                type="password"
+                name=""
                 value={passwordValue}
                 onChange={handlePasswordEntry}
                 placeholder="password"

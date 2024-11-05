@@ -16,25 +16,25 @@ Run testing  / dev server
 - `npm run build`
 - `firebase deploy`
 
-[link to firebase setup](https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-firebase/) 
+[link to firebase setup](https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-firebase/)
 
-[Live Site](https://noted-eeafd.web.app) 
+[Live Site](https://noted-eeafd.web.app)
 
-# TODO 
+# TODO
 ```
-- re - fetch / render - notes every x seconds 
-    - clear note editor on submit
+- notes
     - sort options for notes / search
     - click and drag??
-- keep dark mode on refresh
+
 - Auth
     - add auth to app context
     - if not logged in send user right to login
     - check the user is supposed to have accuses to the note
-- note styling 
-    - set delete / edit buttons to be absolute (at bottom left) 
+
+- note styling
     - see about getting note content to stay in it's original format (not all Squished)
-    - 
+    - make sure really really long words wrap properly
+    - keep editor in place as user scrolls
 ```
 
 
@@ -52,7 +52,7 @@ Run testing  / dev server
         - ~~Week 02 = finish proposal / install node and react tools~~
         - ~~Week 03 = Prototype add / remove notes in react page - no backend~~
         - ~~Week 06 = set up backend and get data moving back and forth~~
-    
+
     - NOT DONE
         - Week 04 = clean up and css and react ensure nice page layout
         - Week 05 = responsive design - mobile / desktop
@@ -67,14 +67,14 @@ Run testing  / dev server
 
 
 ## resources
-- [FireBase CRUD](https://www.youtube.com/watch?v=2hR-uWjBAgw) 
+- [FireBase CRUD](https://www.youtube.com/watch?v=2hR-uWjBAgw)
 
-- [Firebase React Course For Beginners](https://www.youtube.com/watch?v=2hR-uWjBAgw) 
-- [Building Your first React Web Application](https://www.youtube.com/watch?v=NzpbupWoIV4) 
-- [Axios docs](https://axios-http.com/docs/api_intro) 
-- [react rest APIs](https://www.freecodecamp.org/news/how-work-with-restful-apis-in-react-simplified-steps-and-practical-examples/#heading-31-the-fetch-api) 
+- [Firebase React Course For Beginners](https://www.youtube.com/watch?v=2hR-uWjBAgw)
+- [Building Your first React Web Application](https://www.youtube.com/watch?v=NzpbupWoIV4)
+- [Axios docs](https://axios-http.com/docs/api_intro)
+- [react rest APIs](https://www.freecodecamp.org/news/how-work-with-restful-apis-in-react-simplified-steps-and-practical-examples/#heading-31-the-fetch-api)
 
 #### firebase docs
-- [rest API code](https://firebase.google.com/docs/firestore/use-rest-api#making_rest_calls) 
-- [rest API requests](https://firebase.google.com/docs/firestore/reference/rest/) 
+- [rest API code](https://firebase.google.com/docs/firestore/use-rest-api#making_rest_calls)
+- [rest API requests](https://firebase.google.com/docs/firestore/reference/rest/)
 

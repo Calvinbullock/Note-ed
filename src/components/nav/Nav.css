@@ -47,8 +47,8 @@ Nav Component
     width: 10%;
 }
 
-.dark-theme .nav #nav-search, 
-.dark-theme .nav #signIn-button, 
+.dark-theme .nav #nav-search,
+.dark-theme .nav #signIn-button,
 .dark-theme .nav #dark-mode-switch {
     background: var(--nav-input-dark);
     color: var(--text-dark);

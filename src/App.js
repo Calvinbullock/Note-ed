@@ -1,14 +1,14 @@
 
 // react
-import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 
 // firebase
 import { db } from "./config/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, onSnapshot} from "firebase/firestore";
 
 // Components
+import './App.css';
 import HomePage from "./components/HomePage";
 import SignInPage from "./components/signIn-SignUp/SignInPage";
 import SignUpPage from "./components/signIn-SignUp/SignUpPage";
@@ -21,7 +21,7 @@ export default function App() {
 
     // get all Notes from DB
     useEffect(() => {
-        const getNoteList = async () => {
+        const unsubscribe = onSnapshot(notesCollectionRef, (snapshot) => {
             try {
                 // TODO: only get Notes that match user ID
                 //const userId = auth?.currentUser.uid;
@@ -29,16 +29,18 @@ export default function App() {
                 //const q = query(notesCollectionRef, where("userId", "==", userId));
                 //const data = await getDocs(q);
 
-                const data = await getDocs(notesCollectionRef);
-                setNoteData(data.docs.map((doc) => ({id: doc.id, ...doc.data() })));
+                const noteData = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
 
-            } catch (err) {
-                console.error(err);
-            }
-        }
-        getNoteList();
-    // eslint-disable-next-line
-    }, []); // NOTE: [notesCollectionRef, noteData]
+                setNoteData(noteData);
+            } catch (err) { console.log(err); }
+        });
+        // Clean up the listener when the component unmounts
+        return () => unsubscribe();
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <AppProvider>
@@ -48,7 +50,7 @@ export default function App() {
                     <Route path="/SignIn" element={<SignInPage />} />
                     <Route path="/SignUp" element={<SignUpPage />} />
                 </Routes>
-            </BrowserRouter>   
+            </BrowserRouter>
         </AppProvider>
     );
 }
