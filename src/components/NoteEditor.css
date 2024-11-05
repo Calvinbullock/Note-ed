@@ -5,7 +5,7 @@
 * note Editor Component
 ============================================================================== */
 
-.dark-theme .noteEditor, 
+.dark-theme .noteEditor,
 .dark-theme .noteEditor input,
 .dark-theme .noteEditor textarea {
     border: var(--text-dark) solid 1px;
@@ -61,7 +61,7 @@
 }
 
 .noteEditor button:hover {
-    background: var(--hover-button-bg);   
+    background: var(--hover-button-bg);
 }
 
 .dark-theme .noteEditor button {

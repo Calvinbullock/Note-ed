@@ -7,7 +7,7 @@ import { useAppContext } from "../AppContext"
 import "./Nav.css"
 
 export default function Nav() {
-    
+
     const navigate = useNavigate();
     const { toggleTheme } = useAppContext();
 

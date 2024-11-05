@@ -28,13 +28,13 @@ export default function App() {
                 //const notesCollectionRef = collection(db, "notes");
                 //const q = query(notesCollectionRef, where("userId", "==", userId));
                 //const data = await getDocs(q);
-                
+
                 const noteData = snapshot.docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
                 }));
 
-                setNoteData(noteData);   
+                setNoteData(noteData);
             } catch (err) { console.log(err); }
         });
         // Clean up the listener when the component unmounts
@@ -49,7 +49,7 @@ export default function App() {
                     <Route path="/SignIn" element={<SignInPage />} />
                     <Route path="/SignUp" element={<SignUpPage />} />
                 </Routes>
-            </BrowserRouter>   
+            </BrowserRouter>
         </AppProvider>
     );
 }

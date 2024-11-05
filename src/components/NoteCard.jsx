@@ -17,7 +17,7 @@ export default function NoteCard(props) {
             console.error(err);
         }
     };
-    
+
     return (
         <div className={`noteCard ${theme}`} id={props.id}>
             <h3>{props.title}</h3>
@@ -25,13 +25,14 @@ export default function NoteCard(props) {
             {(props.dueDate !== "") && <p>Due On: {props.dueDate}</p>}
             <p>{props.text}</p>
 
-            <button 
+            <button
                 className="delete-note-button"
                 aria-label="Delete Note"
                 onClick={deleteNote}
                 type="deleteNote"
-            >DELETE</button>
-
+            >
+                DELETE
+            </button>
         </div>
     );
 }

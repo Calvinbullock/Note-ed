@@ -41,14 +41,14 @@ export default function HomePage({noteData}) {
                         <option value="Z-A">Z-A</option>
                         <option value="newest">Newest</option>
                         <option value="oldest">Oldest</option>
-                    </select>   
+                    </select>
                     <div id="note-grid">
                         {noteData != null && noteData.map((element, index) => (
                             <NoteCard key={index} {...element} />
                         ))}
                     </div>
                 </div>
-            </section>   
+            </section>
         </div>
     );
 }

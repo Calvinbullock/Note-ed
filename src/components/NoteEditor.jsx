@@ -24,7 +24,7 @@ export default function NoteEditor() {
     const handleTextEntry = (event) => {
         setTextEntry(event.target.value);
     }
-    
+
     // auto adjust textarea height to fit content
     useEffect(() => {
         const textarea = document.querySelector('.noteEditor textarea');
@@ -59,28 +59,28 @@ export default function NoteEditor() {
 
     return (
         <div className="noteEditor">
-            <input 
+            <input
                 aria-label="Input Note title"
-                id="note-title-entry" 
-                type="text" 
-                name="titleEntry" 
-                value={titleValue} 
-                onChange={handleTitleEntry} 
+                id="note-title-entry"
+                type="text"
+                name="titleEntry"
+                value={titleValue}
+                onChange={handleTitleEntry}
                 placeholder="Title"
             /><br/>
-            <input 
+            <input
                 aria-label="Input Note Due Date"
-                id="note-due-date-entry" 
-                type="text" 
-                name="dueDateEntry" 
-                value={dueDateValue} 
-                onChange={handleDueDateChange} 
+                id="note-due-date-entry"
+                type="text"
+                name="dueDateEntry"
+                value={dueDateValue}
+                onChange={handleDueDateChange}
                 placeholder="Due Date"
             /><br/>
-            <textarea 
+            <textarea
                 aria-label="Write Note"
-                id="note-text-entry" 
-                value={textValue} 
+                id="note-text-entry"
+                value={textValue}
                 onChange={handleTextEntry}
                 placeholder="take a note"
             ></textarea><br/>
