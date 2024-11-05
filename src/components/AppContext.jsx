@@ -5,9 +5,9 @@ const AppContext = createContext();
 
 // get the theme from local storage
 function getThemeFromLocalStorage() {
-        let theme = localStorage.getItem('theme');
-        if (theme == null) {
-            theme = "light-theme";
+    let theme = localStorage.getItem('theme');
+    if (theme == null) {
+        theme = "light-theme";
     }
     return theme;
 }
