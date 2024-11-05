@@ -26,9 +26,6 @@ Run testing  / dev server
     - sort options for notes / search
     - click and drag??
 
-- keep dark mode on refresh
-- buttons need a click indication
-
 - Auth
     - add auth to app context
     - if not logged in send user right to login
