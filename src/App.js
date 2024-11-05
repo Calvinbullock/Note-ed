@@ -39,7 +39,8 @@ export default function App() {
         });
         // Clean up the listener when the component unmounts
         return () => unsubscribe();
-    }, [notesCollectionRef]);
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <AppProvider>
