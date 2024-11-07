@@ -12,7 +12,6 @@ function getThemeFromLocalStorage() {
     return theme;
 }
 
-
 export const AppProvider = ({ children }) => {
     const [theme, setTheme] = useState(getThemeFromLocalStorage);
     localStorage.setItem('theme', theme);

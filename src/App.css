@@ -1,18 +1,34 @@
 
 :root {
+    /* LIGHT THEME */
     --background-light: white;
     --text-light: black;
     --nav-input-light: #f0f0f0;
     --note-button-color-light: #f0f0f0;
     --hover-button-bg: #d9d9d9;
 
-    --background-dark: #140033; /* purple-ish */
-    --text-dark: #ffccff;
-    --nav-input-dark: #2f2c31;
-    --note-button-color-dark: #140033;
-    --hover-button-bg-dark: #b380ff;
+    /* DARK THEME */
+    --background-dark: #0d1b2a;
+    --text-dark: #f8f9fa;
+    --placeholder-dark: #adb5bd;
 
+    --nav-input-dark: #aec3b0;
+    --nav-text-input-dark: #0d1b2a;
+    --nav-placeholder-dark: #0d1b2a;
+
+    --note-button-color-dark: #140033;
+    --hover-button-bg-dark: #aec3b0;
+
+    /* OTHER */
     --corner-radius: 20px;
+}
+
+.dark-theme input::placeholder {
+  color: var(--placeholder-dark);
+}
+
+.dark-theme textarea::placeholder {
+  color: var(--placeholder-dark);
 }
 
 main {
