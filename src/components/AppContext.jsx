@@ -8,6 +8,8 @@ function getThemeFromLocalStorage() {
     let theme = localStorage.getItem('theme');
     if (theme == null) {
         theme = "light-theme";
+    } else {
+        document.body.classList.add("dark-theme");
     }
     return theme;
 }
