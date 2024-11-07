@@ -34,6 +34,10 @@ signUp / signIn - component
     width: 80%;
 }
 
+.dark-theme .login-box input::placeholder {
+    color: var(--nav-placeholder-dark);
+}
+
 #alt-sign-up {
     font-size: .8rem;
 }
