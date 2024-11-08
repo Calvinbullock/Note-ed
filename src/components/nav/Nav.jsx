@@ -16,7 +16,6 @@ export default function Nav() {
     };
 
     const handleDarkModeChange = () => {
-        console.log("TODO: in Nav.jsx");
         toggleTheme();
     }
 
