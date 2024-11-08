@@ -18,6 +18,10 @@ export default function NoteCard(props) {
         }
     };
 
+    const editNote = async () => {
+
+    }
+
     return (
         <div className={`noteCard ${theme}`} id={props.id}>
             <h3>{props.title}</h3>
@@ -25,14 +29,21 @@ export default function NoteCard(props) {
             {(props.dueDate !== "") && <p>Due On: {props.dueDate}</p>}
             <p>{props.text}</p>
 
-            <button
-                className="delete-note-button"
-                aria-label="Delete Note"
-                onClick={deleteNote}
-                type="deleteNote"
-            >
-                DELETE
-            </button>
+            <div className="noteCard-buttons" >
+                <button
+                    className="delete-note-button"
+                    aria-label="Delete Note"
+                    onClick={deleteNote}
+                    type="deleteNote"
+                >DELETE</button>
+
+                <button
+                    className="edit-note-button"
+                    aria-label="Edit Note"
+                    onClick={editNote}
+                    type="editNote"
+                >EDIT</button>
+            </div>
         </div>
     );
 }

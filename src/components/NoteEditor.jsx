@@ -84,7 +84,10 @@ export default function NoteEditor() {
                 onChange={handleTextEntry}
                 placeholder="take a note"
             ></textarea><br/>
-            <button aria-label="Submit Note" onClick={submitNote}>Add</button>
+            <button
+                aria-label="Submit Note"
+                onClick={submitNote}
+            >Add Note</button>
         </div>
     );
 }

@@ -58,6 +58,7 @@
 .noteEditor button {
     border-radius: var(--corner-radius);
     background: var(--note-button-color-light);
+    border: var(--text-dark);
 }
 
 .noteEditor button:hover {
@@ -66,10 +67,11 @@
 
 .dark-theme .noteEditor button {
     border-radius: var(--corner-radius);
-    background: var(--note-button-color-dark);
+    background: var(--background-dark);
 }
 
 .dark-theme .noteEditor button:hover {
     background: var(--hover-button-bg-dark);
+    color: var(--hover-button-text-dark);
 }
 
