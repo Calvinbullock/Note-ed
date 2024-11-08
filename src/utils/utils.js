@@ -9,6 +9,9 @@ function clearInput(inputId) {
   }
 }
 
+/* ==================================================================
+ * used to store noted before dataBase
+ * ================================================================== */
 function getNotesFromLocalStorage() {
     const noteListString = localStorage.getItem('noteList');
 
