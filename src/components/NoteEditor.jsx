@@ -31,7 +31,9 @@ export default function NoteEditor() {
         setTextEntry(event.target.value);
     }
 
-    // auto adjust textarea height to fit content
+    /*  ===============================================
+     *  Auto Ajust the text area to fit the content
+     * ============================================= */
     useEffect(() => {
         const textarea = document.querySelector('.noteEditor textarea');
         const container = textarea.parentNode;
