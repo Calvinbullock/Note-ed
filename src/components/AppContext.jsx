@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState } from 'react';
 const AppContext = createContext();
 
 // get the theme from local storage
+//      is used to keep the theme set on page refresh
 function getThemeFromLocalStorage() {
     let theme = localStorage.getItem('theme');
 
@@ -17,6 +18,10 @@ function getThemeFromLocalStorage() {
 }
 
 export const AppProvider = ({ children }) => {
+
+    /*  =======================================================================
+     *      Theme State
+     * ===================================================================== */
     const [theme, setTheme] = useState(getThemeFromLocalStorage);
     localStorage.setItem('theme', theme);
 

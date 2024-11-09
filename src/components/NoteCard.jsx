@@ -1,12 +1,20 @@
 
-import React from "react";
+// config
 import { db } from "../config/firebase";
+
+// node
 import { deleteDoc, doc } from "firebase/firestore";
+
+// components
+import { setNoteLocalStorage } from "../utils/utils";
 import { useAppContext } from './AppContext';
 
 import "./NoteCard.css"
-export default function NoteCard(props) {
 
+/*  ===============================================
+ *  COMPONENT DEFINITION
+ * ============================================= */
+export default function NoteCard(props) {
     const { theme } = useAppContext();
 
     const deleteNote = async () => {
@@ -29,7 +37,7 @@ export default function NoteCard(props) {
             {(props.dueDate !== "") && <p>Due On: {props.dueDate}</p>}
             <p>{props.text}</p>
 
-            <div className="noteCard-buttons" >
+            <div className="noteCard-buttons">
                 <button
                     className="delete-note-button"
                     aria-label="Delete Note"

@@ -2,12 +2,15 @@
 import React, { useState, useEffect } from "react";
 import { collection, addDoc} from "firebase/firestore";
 
-// src js fies
+// config
 import { db, auth } from "./../config/firebase";
 
 import { formatEpochTime, clearInput} from "../utils/utils";
 import "./NoteEditor.css"
 
+/*  ===============================================
+ *  COMPONENT DEFINITION
+ * ============================================= */
 export default function NoteEditor() {
     const notesCollectionRef = collection(db, "Notes");
 
@@ -15,6 +18,7 @@ export default function NoteEditor() {
     const [ dueDateValue, setDueDateEntry ] = useState("")
     const [ textValue, setTextEntry ] = useState("")
 
+    // value changes handlers
     const handleTitleEntry = (event) => {
         setTitleEntry(event.target.value);
     }
@@ -37,6 +41,9 @@ export default function NoteEditor() {
         });
     }, []);
 
+    /*  ===============================================
+     *  Submit the note to fireBase
+     * ============================================= */
     const submitNote = async () => {
         const addDate = Date.now();
         try {
