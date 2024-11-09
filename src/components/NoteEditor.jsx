@@ -5,14 +5,16 @@ import { collection, addDoc} from "firebase/firestore";
 // config
 import { db, auth } from "./../config/firebase";
 
-import { formatEpochTime, clearInput} from "../utils/utils";
+// components
+import { formatEpochTime, clearInput } from "../utils/utils";
+
 import "./NoteEditor.css"
 
 /*  ===============================================
  *  COMPONENT DEFINITION
  * ============================================= */
 export default function NoteEditor() {
-    const notesCollectionRef = collection(db, "Notes");
+    const notesCollectionRef = collection(db, "Notes"); // dataBase connection
 
     const [ titleValue, setTitleEntry ] = useState("")
     const [ dueDateValue, setDueDateEntry ] = useState("")
