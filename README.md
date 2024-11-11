@@ -13,6 +13,8 @@ Run testing  / dev server
 - should deploy a build every time a change is pushed/megerd to main git branch -- DISABLED
 
 ##### if auto prod build fails
+- run `./deploy.sh`
+
 - `npm run build`
 - `firebase deploy`
 
