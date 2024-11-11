@@ -2,7 +2,7 @@
 
 git pull
 
-git run build
+npm run build
 
 firebase deploy
 

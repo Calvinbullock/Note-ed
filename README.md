@@ -15,6 +15,8 @@ Run testing  / dev server
 ##### if auto prod build fails
 - run `./deploy.sh`
 
+#### or
+
 - `npm run build`
 - `firebase deploy`
 
