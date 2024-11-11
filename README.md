@@ -23,7 +23,7 @@ Run testing  / dev server
 # TODO
 ```
 - notes
-    - sort options for notes / search
+    - search
     - click and drag??
 
 - Auth
@@ -35,6 +35,10 @@ Run testing  / dev server
     - see about getting note content to stay in it's original format (not all Squished)
     - make sure really really long words wrap properly
     - keep editor in place as user scrolls
+
+TODO: 2
+BUG:  1
+
 ```
 
 
