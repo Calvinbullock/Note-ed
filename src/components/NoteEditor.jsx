@@ -68,7 +68,7 @@ export default function NoteEditor() {
 
     /*  ===============================================
      *  Note Editor State
-     *      Check if there is note saved in local and
+     *      get the note saved in local storage and
      *      set the values for the editor
      * ============================================= */
     useEffect(() => {
@@ -83,6 +83,7 @@ export default function NoteEditor() {
 
     /*  ===============================================
      *  Submit Edited Note
+     *      submit the new note content
      * ============================================= */
     const submitNoteEdit = async () => {
         const docRef = doc(db, "Notes", noteId);
@@ -95,7 +96,6 @@ export default function NoteEditor() {
                 //userId: auth?.currentUser?.uid,
             });
             clearEditor();
-            setEditNoteWasClicked(false);
 
         } catch (err) {
             console.error(err);

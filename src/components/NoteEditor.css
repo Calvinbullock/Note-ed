@@ -53,6 +53,10 @@
     width: 100%;
 }
 
+#note-id-entry {
+    display: none;
+}
+
 /* ------------ buttons ------------ */
 
 .noteEditor-buttons {
