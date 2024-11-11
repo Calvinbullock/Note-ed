@@ -3,17 +3,29 @@ import React, { createContext, useContext, useState } from 'react';
 
 const AppContext = createContext();
 
+// TODO: move to utils
 // get the theme from local storage
+//      is used to keep the theme set on page refresh
 function getThemeFromLocalStorage() {
     let theme = localStorage.getItem('theme');
-    if (theme == null) {
+
+    if (theme == null || theme === "light-theme") {
         theme = "light-theme";
+        document.body.classList.remove("dark-theme");
+    } else {
+        document.body.classList.add("dark-theme");
     }
     return theme;
 }
 
-
+/*  ===============================================
+ *  COMPONENT DEFINITION
+ * ============================================= */
 export const AppProvider = ({ children }) => {
+
+    /*  =======================================================================
+     *      Theme State
+     * ===================================================================== */
     const [theme, setTheme] = useState(getThemeFromLocalStorage);
     localStorage.setItem('theme', theme);
 
@@ -29,9 +41,22 @@ export const AppProvider = ({ children }) => {
         }
     };
 
+    /*  =======================================================================
+     *      Note Editor State
+     * ===================================================================== */
+
+    const [ wasEditNoteClicked, setEditNoteWasClicked] = useState(false);
+
+    /*  =======================================================================
+     *      Note Editor State
+     * ===================================================================== */
     const value = {
+        // theme dark / light
         theme,
         toggleTheme,
+        // note
+        wasEditNoteClicked,
+        setEditNoteWasClicked,
     };
 
     return (

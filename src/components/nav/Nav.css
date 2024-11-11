@@ -51,7 +51,11 @@ Nav Component
 .dark-theme .nav #signIn-button,
 .dark-theme .nav #dark-mode-switch {
     background: var(--nav-input-dark);
-    color: var(--text-dark);
+    color: var(--nav-text-input-dark);
+}
+
+.dark-theme .nav input::placeholder {
+    color: var(--nav-placeholder-dark);
 }
 
 #signIn-button {

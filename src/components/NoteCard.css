@@ -12,7 +12,7 @@ note card Component
 
     padding: 1rem;
     padding-top: .1rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4.5rem;
 
     position: relative;
 }
@@ -30,7 +30,9 @@ note card Component
 
 /* ------------ buttons ------------ */
 
-.delete-note-button {
+.noteCard-buttons {
+    display: flex;
+    gap: 10px;
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -38,12 +40,14 @@ note card Component
 
 .dark-theme .noteCard button {
     border-radius: var(--corner-radius);
-    background: var(--note-button-color-dark);
+    background: var(--background-dark);
+    border: var(--text-dark);
 }
 
 .noteCard button {
     border-radius: var(--corner-radius);
-    background: var(--note-button-color-light);
+    background: var(--background-light);
+    border: none;
 }
 
 .noteCard button:hover {
@@ -52,6 +56,7 @@ note card Component
 
 .dark-theme .noteCard button:hover {
     background: var(--hover-button-bg-dark);
+    color: var(--hover-button-text-dark);
 }
 
 /* ------------ media query ------------ */

@@ -11,7 +11,7 @@ signUp / signIn - component
 
 .dark-theme input {
     background: var(--nav-input-dark);
-    color: var(--text-dark);
+    color: var(--nav-text-input-dark);
 }
 
 .login-box {
@@ -32,6 +32,10 @@ signUp / signIn - component
     border-radius: var(--corner-radius);
     margin: .5rem;
     width: 80%;
+}
+
+.dark-theme .login-box input::placeholder {
+    color: var(--nav-placeholder-dark);
 }
 
 #alt-sign-up {
