@@ -6,7 +6,7 @@ import { collection, addDoc, doc, updateDoc} from "firebase/firestore";
 import { db, auth } from "./../config/firebase";
 
 // components
-import { formatEpochTime, clearInput, getNoteLocalStorage} from "../utils/utils";
+import { formatEpochTime, getNoteLocalStorage} from "../utils/utils";
 import { useAppContext } from "./AppContext";
 
 import "./NoteEditor.css"
@@ -48,6 +48,20 @@ export default function NoteEditor() {
         setEditNoteWasClicked(false);
     };
 
+    /*  ===============================================
+     *  Auto Adjust the text area to fit the content
+     * ============================================= */
+    useEffect(() => {
+        const textarea = document.querySelector('.noteEditor textarea');
+        const container = textarea.parentNode;
+
+        textarea.addEventListener('input', () => {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+            container.style.height = 'auto';
+        });
+    }, []);
+
     /*  ==============================================================================================
      *  Edit Existing Note
      * ============================================================================================ */
@@ -87,21 +101,6 @@ export default function NoteEditor() {
             console.error(err);
         }
     };
-
-    // TODO: MOVE THIS UP NEAR THE CLEAR function
-    /*  ===============================================
-     *  Auto Adjust the text area to fit the content
-     * ============================================= */
-    useEffect(() => {
-        const textarea = document.querySelector('.noteEditor textarea');
-        const container = textarea.parentNode;
-
-        textarea.addEventListener('input', () => {
-            textarea.style.height = 'auto';
-            textarea.style.height = textarea.scrollHeight + 'px';
-            container.style.height = 'auto';
-        });
-    }, []);
 
     /*  ==============================================================================================
      *  Edit New Note
