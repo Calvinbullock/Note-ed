@@ -74,10 +74,12 @@ export default function NoteEditor() {
     useEffect(() => {
         const noteEdit = getNoteLocalStorage();
 
-        setId(noteEdit.id);
-        setTitleEntry(noteEdit.title);
-        setDueDateEntry(noteEdit.dueDate)
-        setTextEntry(noteEdit.text);
+        if (noteEdit != null) {
+            setId(noteEdit.id);
+            setTitleEntry(noteEdit.title);
+            setDueDateEntry(noteEdit.dueDate)
+            setTextEntry(noteEdit.text);
+        }
 
     }, [wasEditNoteClicked])
 
