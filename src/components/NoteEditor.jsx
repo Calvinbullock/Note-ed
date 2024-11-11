@@ -32,7 +32,17 @@ export default function NoteEditor() {
     }
 
     /*  ===============================================
-     *  Auto Ajust the text area to fit the content
+     *  Clear Editor
+     * ============================================= */
+    const clearEditor = () => {
+        setTitleEntry("");
+        setDueDateEntry("");
+        setTextEntry("");
+
+    }
+
+    /*  ===============================================
+     *  Auto Adjust the text area to fit the content
      * ============================================= */
     useEffect(() => {
         const textarea = document.querySelector('.noteEditor textarea');
@@ -95,10 +105,18 @@ export default function NoteEditor() {
                 onChange={handleTextEntry}
                 placeholder="take a note"
             ></textarea><br/>
-            <button
-                aria-label="Submit Note"
-                onClick={submitNote}
-            >Add Note</button>
+
+            <div className="noteEditor-buttons">
+                <button
+                    aria-label="Submit Note"
+                    onClick={submitNote}
+                >Add Note</button>
+
+                <button
+                    aria-label="Clear Note Editor"
+                    onClick={clearEditor}
+                >clear</button>
+            </div>
         </div>
     );
 }

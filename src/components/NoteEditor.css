@@ -55,6 +55,13 @@
 
 /* ------------ buttons ------------ */
 
+.noteEditor-buttons {
+    display: flex;
+    gap: 10px;
+    bottom: 10px;
+    left: 10px;
+}
+
 .noteEditor button {
     border-radius: var(--corner-radius);
     background: var(--note-button-color-light);
