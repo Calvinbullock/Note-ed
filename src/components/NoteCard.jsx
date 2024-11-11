@@ -15,8 +15,11 @@ import "./NoteCard.css"
  *  COMPONENT DEFINITION
  * ============================================= */
 export default function NoteCard(props) {
-    const { theme } = useAppContext();
+    const { theme, setEditNoteWasClicked} = useAppContext();
 
+    /*  ==============================================
+    *  Delete Note
+    * ============================================= */
     const deleteNote = async () => {
         try {
             const noteDoc = doc(db, "Notes", props.id);
@@ -26,15 +29,21 @@ export default function NoteCard(props) {
         }
     };
 
-    const editNote = async () => {
-
+    /*  ==============================================
+    *  Trigger Note Edit
+    * ============================================= */
+    const editNote = () => {
+        setNoteLocalStorage(props);
+        setEditNoteWasClicked(true);
     }
 
     return (
         <div className={`noteCard ${theme}`} id={props.id}>
             <h3>{props.title}</h3>
             <p>Note From: {props.date}</p>
+
             {(props.dueDate !== "") && <p>Due On: {props.dueDate}</p>}
+
             <p>{props.text}</p>
 
             <div className="noteCard-buttons">

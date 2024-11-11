@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 const AppContext = createContext();
 
+// TODO: move to utils
 // get the theme from local storage
 //      is used to keep the theme set on page refresh
 function getThemeFromLocalStorage() {
@@ -17,6 +18,9 @@ function getThemeFromLocalStorage() {
     return theme;
 }
 
+/*  ===============================================
+ *  COMPONENT DEFINITION
+ * ============================================= */
 export const AppProvider = ({ children }) => {
 
     /*  =======================================================================
@@ -37,9 +41,22 @@ export const AppProvider = ({ children }) => {
         }
     };
 
+    /*  =======================================================================
+     *      Note Editor State
+     * ===================================================================== */
+
+    const [ wasEditNoteClicked, setEditNoteWasClicked] = useState(false);
+
+    /*  =======================================================================
+     *      Note Editor State
+     * ===================================================================== */
     const value = {
+        // theme dark / light
         theme,
         toggleTheme,
+        // note
+        wasEditNoteClicked,
+        setEditNoteWasClicked,
     };
 
     return (
