@@ -6,7 +6,7 @@ import { collection, addDoc, doc, updateDoc} from "firebase/firestore";
 import { db, auth } from "./../config/firebase";
 
 // components
-import { formatEpochTime, getNoteLocalStorage} from "../utils/utils";
+import { formatEpochTime, clearInput, getNoteLocalStorage} from "../utils/utils";
 import { useAppContext } from "./AppContext";
 
 import "./NoteEditor.css"
@@ -42,10 +42,21 @@ export default function NoteEditor() {
      *  Clear Editor
      * ============================================= */
     const clearEditor = () => {
+        // BUG: the value do not clear with on click -- it needs two...
+        //      only apears when clearing an existing note edited
+        setEditNoteWasClicked(false);
+
+        // clear the values
+        clearInput("note-id-entry");
+        clearInput("note-title-entry");
+        clearInput("note-due-date-entry");
+        clearInput("note-text-entry");
+
+        // clear the state
+        setId("");
         setTitleEntry("");
         setDueDateEntry("");
         setTextEntry("");
-        setEditNoteWasClicked(false);
     };
 
     /*  ===============================================

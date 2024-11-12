@@ -1,4 +1,14 @@
 
+/* ==================================================================
+ * CLEAR INPUT
+ * ================================================================== */
+function clearInput(inputId) {
+    const inputElement = document.getElementById(inputId);
+    if (inputElement) {
+        inputElement.value = '';
+    }
+}
+
 function getEpochTimeInSeconds() {
     return Math.floor(Date.now() / 1000);
 }
@@ -28,6 +38,7 @@ function getNoteLocalStorage() {
 }
 
 export {
+    clearInput,
     getEpochTimeInSeconds,
     formatEpochTime,
     setNoteLocalStorage,
