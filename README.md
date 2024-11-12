@@ -26,6 +26,7 @@ Run testing  / dev server
 ```
 - notes
     - search
+    - confirm delete
     - click and drag??
 
 - Auth
@@ -40,6 +41,7 @@ Run testing  / dev server
 
 TODO: 2
 BUG:  1
+    - clearing editor with exsiting note
 
 ```
 
