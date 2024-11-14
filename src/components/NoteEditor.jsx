@@ -50,6 +50,12 @@ export default function NoteEditor() {
         clearInput("note-due-date-entry");
         clearInput("note-text-entry");
 
+        // clear the state
+        setId("");
+        setTitleEntry("");
+        setDueDateEntry("");
+        setTextEntry("");
+
         clearNoteLocalStorage();
     };
 
