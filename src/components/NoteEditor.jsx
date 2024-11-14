@@ -42,8 +42,6 @@ export default function NoteEditor() {
      *  Clear Editor
      * ============================================= */
     const clearEditor = () => {
-        // BUG: the value do not clear with on click -- it needs two...
-        //      only apears when clearing an existing note edited
         setEditNoteWasClicked(false);
 
         // clear the values

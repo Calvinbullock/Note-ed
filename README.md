@@ -40,9 +40,6 @@ Run testing  / dev server
     - keep editor in place as user scrolls
 
 TODO: 2
-BUG:  1
-    - clearing editor with exsiting note
-
 ```
 
 # Milestone
