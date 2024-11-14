@@ -6,7 +6,7 @@ import { collection, addDoc, doc, updateDoc} from "firebase/firestore";
 import { db, auth } from "./../config/firebase";
 
 // components
-import { formatEpochTime, clearInput, getNoteLocalStorage} from "../utils/utils";
+import { formatEpochTime, clearInput, getNoteLocalStorage, clearNoteLocalStorage} from "../utils/utils";
 import { useAppContext } from "./AppContext";
 
 import "./NoteEditor.css"
@@ -52,11 +52,7 @@ export default function NoteEditor() {
         clearInput("note-due-date-entry");
         clearInput("note-text-entry");
 
-        // clear the state
-        setId("");
-        setTitleEntry("");
-        setDueDateEntry("");
-        setTextEntry("");
+        clearNoteLocalStorage();
     };
 
     /*  ===============================================

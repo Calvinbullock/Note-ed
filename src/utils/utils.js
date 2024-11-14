@@ -37,10 +37,19 @@ function getNoteLocalStorage() {
     return JSON.parse(localStorage.getItem("currentNote"));
 }
 
+/* ==================================================================
+ * Clear Note From Local Storage
+ *  clears the note being edited to local storage
+ * ================================================================== */
+function clearNoteLocalStorage() {
+    localStorage.setItem("currentNote", JSON.stringify({}));
+}
+
 export {
     clearInput,
     getEpochTimeInSeconds,
     formatEpochTime,
     setNoteLocalStorage,
     getNoteLocalStorage,
+    clearNoteLocalStorage,
 }
