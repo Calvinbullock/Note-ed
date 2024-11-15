@@ -35,6 +35,7 @@ export default function NoteCard(props) {
     const editNote = () => {
         setNoteLocalStorage(props);
         setEditNoteWasClicked(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     return (
