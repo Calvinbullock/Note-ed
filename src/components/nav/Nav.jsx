@@ -6,15 +6,23 @@ import { useAppContext } from "../AppContext"
 
 import "./Nav.css"
 
-export default function Nav() {
-
+/*  ===============================================
+ *  COMPONENT DEFINITION
+ * ============================================= */
+export default function Nav(noteData) {
     const navigate = useNavigate();
     const { toggleTheme } = useAppContext();
 
+    /*  ===============================================
+     *  Login redirect
+     * ============================================= */
     const handleSignIn = () => {
         navigate('/signIn');
     };
 
+    /*  ===============================================
+     *  Set theme
+     * ============================================= */
     const handleDarkModeChange = () => {
         toggleTheme();
     }
