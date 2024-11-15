@@ -7,6 +7,9 @@ import NoteCard from "./NoteCard";
 import NoteEditor from "./NoteEditor";
 import { useAppContext } from './AppContext';
 
+/*  ===============================================
+ *  COMPONENT DEFINITION
+ * ============================================= */
 export default function HomePage({noteData}) {
 
     const { theme } = useAppContext();
@@ -16,6 +19,7 @@ export default function HomePage({noteData}) {
         setSort(event.target.value);
     };
 
+    // Sort Notes based on selected strt type
     if (selectedSort === "A-Z") {
         noteData.sort((a, b) => a.title.localeCompare(b.title));
     } else if (selectedSort === "Z-A") {
