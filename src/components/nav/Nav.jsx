@@ -1,5 +1,4 @@
 
-import React from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { auth } from "./../../config/firebase";
 import { useAppContext } from "../AppContext"
@@ -9,9 +8,9 @@ import "./Nav.css"
 /*  ===============================================
  *  COMPONENT DEFINITION
  * ============================================= */
-export default function Nav(noteData) {
+export default function Nav() {
     const navigate = useNavigate();
-    const { toggleTheme } = useAppContext();
+    const { toggleTheme, setSearchTarget } = useAppContext();
 
     /*  ===============================================
      *  Login redirect
@@ -27,8 +26,11 @@ export default function Nav(noteData) {
         toggleTheme();
     }
 
-    const handleSearch = () => {
-        console.log("TODO: in Nav.jsx");
+    /*  ===============================================
+     *  Search Notes
+     * ============================================= */
+    const handleSearch = (event) => {
+        setSearchTarget(event.target.value)
     };
 
     return (
@@ -42,6 +44,7 @@ export default function Nav(noteData) {
                 name="search"
                 placeholder="search"
             />
+            <ul id="suggestionList"></ul>
 
             {(auth.currentUser == null) ? (
                 <button

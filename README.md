@@ -40,6 +40,7 @@ Run testing  / dev server
     - keep editor in place as user scrolls
 
 TODO: 2
+WORKING: search
 ```
 
 # Milestone

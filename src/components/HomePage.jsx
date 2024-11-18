@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.css"
 
 import Nav from "./nav/Nav";
@@ -12,14 +12,14 @@ import { useAppContext } from './AppContext';
  * ============================================= */
 export default function HomePage({noteData}) {
 
-    const { theme } = useAppContext();
+    const { theme, searchTarget, setSearchTarget } = useAppContext();
     const [selectedSort, setSort] = useState('A-Z');
 
     const handleSortChange = (event) => {
         setSort(event.target.value);
     };
 
-    // Sort Notes based on selected strt type
+    // Sort Notes based on selected start type
     if (selectedSort === "A-Z") {
         noteData.sort((a, b) => a.title.localeCompare(b.title));
     } else if (selectedSort === "Z-A") {
@@ -29,6 +29,23 @@ export default function HomePage({noteData}) {
     } else if (selectedSort === "oldest") {
         noteData.sort((a, b) => (a.dateEpoch - b.dateEpoch))
     }
+
+    // Search
+    //
+    //  NOTE: one way to render note search
+    //  make a div that re-renders all the matching items above the main items??
+    useEffect(() => {
+        if (searchTarget != null) {
+            let fillterdNoteData = noteData?.filter(
+                item => item.title.includes(searchTarget)
+            );
+
+            // TODO: show searched items
+            console.log(fillterdNoteData)
+        }
+        setSearchTarget("");
+        // eslint-disable-next-line
+    }, [searchTarget]);
 
     return (
      <div className={`home page ${theme}`}>

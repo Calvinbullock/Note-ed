@@ -48,7 +48,13 @@ export const AppProvider = ({ children }) => {
     const [ wasEditNoteClicked, setEditNoteWasClicked] = useState(false);
 
     /*  =======================================================================
-     *      Note Editor State
+     *     searchTarget
+     * ===================================================================== */
+
+    const [ searchTarget, setSearchTarget ] = useState("");
+
+    /*  =======================================================================
+     *      context values
      * ===================================================================== */
     const value = {
         // theme dark / light
@@ -57,6 +63,9 @@ export const AppProvider = ({ children }) => {
         // note
         wasEditNoteClicked,
         setEditNoteWasClicked,
+        // seearch
+        searchTarget,
+        setSearchTarget,
     };
 
     return (

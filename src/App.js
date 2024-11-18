@@ -33,7 +33,6 @@ export default function App() {
                 setNoteData(noteData);
             } catch (err) { console.log(err); }
         });
-
         // Clean up the listener when the component unmounts
         return () => unsubscribe();
         // eslint-disable-next-line
