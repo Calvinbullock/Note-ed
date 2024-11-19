@@ -24,8 +24,8 @@ Run testing  / dev server
 
 # TODO
 ```
-- notes
-    - search
+- notes additions
+    - add clear search button
     - confirm delete
     - click and drag??
 
