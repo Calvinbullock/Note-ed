@@ -50,6 +50,15 @@ WORKING: search
     - Cool new note, expand area to enter note, like keep functionality.
     - Edit automatically pops the text back up to the note editing area (like keep). (week 7)
 
+#### Pining notes
+- add a flag `pined: T/F`
+```js
+if (pinned) {
+    add to pinned list
+    removed from normal list
+}
+```
+
 - Must Have's
     - 1 - ~~add remove notes~~
     - 2 - ~~sign in capabilities~~
