@@ -1,22 +1,8 @@
 
 import React, { createContext, useContext, useState } from 'react';
+import { getThemeFromLocalStorage } from '../utils/utils';
 
 const AppContext = createContext();
-
-// TODO: move to utils
-// get the theme from local storage
-//      is used to keep the theme set on page refresh
-function getThemeFromLocalStorage() {
-    let theme = localStorage.getItem('theme');
-
-    if (theme == null || theme === "light-theme") {
-        theme = "light-theme";
-        document.body.classList.remove("dark-theme");
-    } else {
-        document.body.classList.add("dark-theme");
-    }
-    return theme;
-}
 
 /*  ===============================================
  *  COMPONENT DEFINITION
@@ -48,7 +34,13 @@ export const AppProvider = ({ children }) => {
     const [ wasEditNoteClicked, setEditNoteWasClicked] = useState(false);
 
     /*  =======================================================================
-     *      Note Editor State
+     *     searchTarget
+     * ===================================================================== */
+
+    const [ searchTarget, setSearchTarget ] = useState("");
+
+    /*  =======================================================================
+     *      context values
      * ===================================================================== */
     const value = {
         // theme dark / light
@@ -57,6 +49,9 @@ export const AppProvider = ({ children }) => {
         // note
         wasEditNoteClicked,
         setEditNoteWasClicked,
+        // search Target
+        searchTarget,
+        setSearchTarget,
     };
 
     return (

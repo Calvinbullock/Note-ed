@@ -26,6 +26,7 @@ Run testing  / dev server
 ```
 - notes
     - search
+    - confirm delete
     - click and drag??
 
 - Auth
@@ -39,8 +40,7 @@ Run testing  / dev server
     - keep editor in place as user scrolls
 
 TODO: 2
-BUG:  1
-
+WORKING: search
 ```
 
 # Milestone
@@ -49,6 +49,15 @@ BUG:  1
     - Synchronization between two devices/tabs
     - Cool new note, expand area to enter note, like keep functionality.
     - Edit automatically pops the text back up to the note editing area (like keep). (week 7)
+
+#### Pining notes
+- add a flag `pined: T/F`
+```js
+if (pinned) {
+    add to pinned list
+    removed from normal list
+}
+```
 
 - Must Have's
     - 1 - ~~add remove notes~~

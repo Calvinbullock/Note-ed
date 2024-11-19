@@ -14,7 +14,9 @@ import SignInPage from "./components/signIn-SignUp/SignInPage";
 import SignUpPage from "./components/signIn-SignUp/SignUpPage";
 import { AppProvider } from './components/AppContext';
 
-// main function
+/*  ===============================================
+ *  COMPONENT DEFINITION
+ * ============================================= */
 export default function App() {
     const notesCollectionRef = collection(db, "Notes");
     const [noteData, setNoteData] = useState([]);
@@ -23,12 +25,6 @@ export default function App() {
     useEffect(() => {
         const unsubscribe = onSnapshot(notesCollectionRef, (snapshot) => {
             try {
-                // TODO: only get Notes that match user ID
-                //const userId = auth?.currentUser.uid;
-                //const notesCollectionRef = collection(db, "notes");
-                //const q = query(notesCollectionRef, where("userId", "==", userId));
-                //const data = await getDocs(q);
-
                 const noteData = snapshot.docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data(),
