@@ -45,6 +45,23 @@ function clearNoteLocalStorage() {
     localStorage.setItem("currentNote", JSON.stringify({}));
 }
 
+/* ==================================================================
+ * GET THEME FOR LOCAL STORAGE
+ *      is used to keep the theme set on page refresh
+ * ================================================================== */
+function getThemeFromLocalStorage() {
+    let theme = localStorage.getItem('theme');
+
+    if (theme == null || theme === "light-theme") {
+        theme = "light-theme";
+        document.body.classList.remove("dark-theme");
+    } else {
+        document.body.classList.add("dark-theme");
+    }
+
+    return theme;
+}
+
 export {
     clearInput,
     getEpochTimeInSeconds,
@@ -52,4 +69,5 @@ export {
     setNoteLocalStorage,
     getNoteLocalStorage,
     clearNoteLocalStorage,
+    getThemeFromLocalStorage,
 }
