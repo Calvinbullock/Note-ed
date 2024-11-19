@@ -15,8 +15,14 @@ import "./HomePage.css"
  * ============================================= */
 export default function HomePage({noteData}) {
 
-    const { theme, searchTarget, setSearchTarget } = useAppContext();
+    // app context
+    const {
+        theme,
+        searchTarget,
+    } = useAppContext();
+
     const [selectedSort, setSort] = useState('A-Z');
+    const [searchMatches, setSearchMatches] = useState([]);
 
     // sort change handler
     const handleSortChange = (event) => {
@@ -36,22 +42,29 @@ export default function HomePage({noteData}) {
 
     // Note Search Filter
     useEffect(() => {
-        if (searchTarget != null) {
-            let fillterdNoteData = noteData?.filter(
-                item => item.title.includes(searchTarget)
+        if (searchTarget) {
+            const filteredNoteData = noteData?.filter(
+                (item) => item.title.includes(searchTarget)
             );
-
-            // TODO: show searched items
-            console.log(fillterdNoteData)
+            setSearchMatches(filteredNoteData);
+        } else {
+            setSearchMatches([]);
         }
-        setSearchTarget("");
-        // eslint-disable-next-line
     }, [searchTarget]);
 
     // HTML Component
     return (
      <div className={`home page ${theme}`}>
             <Nav/>
+
+            <section id="seachResults">
+                    <div class="note-grid">
+                        {searchMatches != null && searchMatches.map((element, index) => (
+                            <NoteCard key={index} {...element} />
+                        ))}
+                    </div>
+            </section>
+
             <section id="note-section">
                 <div id="home-edit-note">
                     <NoteEditor />
@@ -65,7 +78,7 @@ export default function HomePage({noteData}) {
                         <option value="newest">Newest</option>
                         <option value="oldest">Oldest</option>
                     </select>
-                    <div id="note-grid">
+                    <div class="note-grid">
                         {noteData != null && noteData.map((element, index) => (
                             <NoteCard key={index} {...element} />
                         ))}
