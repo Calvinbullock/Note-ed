@@ -50,6 +50,7 @@ export default function HomePage({noteData}) {
         } else {
             setSearchMatches([]);
         }
+        // eslint-disable-next-line
     }, [searchTarget]);
 
     // HTML Component

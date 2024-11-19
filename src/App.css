@@ -2,7 +2,7 @@
 :root {
     /* LIGHT THEME */
     --background-light: white;
-    --text-light: black;
+    --text-light: #00000d;
     --nav-input-light: #f0f0f0;
     --note-button-color-light: #f0f0f0;
     --hover-button-bg: #d9d9d9;
@@ -23,7 +23,7 @@
     /*DARK LINKS*/
     --link-dark: #386641;
     --link-clicked-dark: #6a994e;
-    --linka-hover-dark: #7c957;
+    --linka-hover-dark: #7c957f;
 
     /* OTHER */
     --corner-radius: 20px;
