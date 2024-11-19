@@ -63,7 +63,7 @@ export const AppProvider = ({ children }) => {
         // note
         wasEditNoteClicked,
         setEditNoteWasClicked,
-        // seearch
+        // search Target
         searchTarget,
         setSearchTarget,
     };
