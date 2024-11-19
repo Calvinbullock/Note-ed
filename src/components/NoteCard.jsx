@@ -39,7 +39,7 @@ export default function NoteCard(props) {
     }
 
     return (
-        <div className={`noteCard ${theme}`} id={props.id}>
+        <div className={`noteCard ${theme} ${props.modList?.map((mod) => `${mod}`)} `} id={props.id}>
             <h3>{props.title}</h3>
             <p>Note From: {props.date}</p>
 
