@@ -106,6 +106,7 @@ export default function NoteEditor() {
                 title: titleValue,
                 dueDate: dueDateValue,
                 text: textValue,
+                modList: [],
                 //userId: auth?.currentUser?.uid,
             });
             clearEditor();
