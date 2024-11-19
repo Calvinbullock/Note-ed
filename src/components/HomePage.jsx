@@ -1,11 +1,14 @@
 
+// react modules
 import React, { useEffect, useState } from "react";
-import "./HomePage.css"
 
+// components
 import Nav from "./nav/Nav";
 import NoteCard from "./NoteCard";
 import NoteEditor from "./NoteEditor";
 import { useAppContext } from './AppContext';
+
+import "./HomePage.css"
 
 /*  ===============================================
  *  COMPONENT DEFINITION
@@ -15,6 +18,7 @@ export default function HomePage({noteData}) {
     const { theme, searchTarget, setSearchTarget } = useAppContext();
     const [selectedSort, setSort] = useState('A-Z');
 
+    // sort change handler
     const handleSortChange = (event) => {
         setSort(event.target.value);
     };
@@ -30,10 +34,7 @@ export default function HomePage({noteData}) {
         noteData.sort((a, b) => (a.dateEpoch - b.dateEpoch))
     }
 
-    // Search
-    //
-    //  NOTE: one way to render note search
-    //  make a div that re-renders all the matching items above the main items??
+    // Note Search Filter
     useEffect(() => {
         if (searchTarget != null) {
             let fillterdNoteData = noteData?.filter(
@@ -47,6 +48,7 @@ export default function HomePage({noteData}) {
         // eslint-disable-next-line
     }, [searchTarget]);
 
+    // HTML Component
     return (
      <div className={`home page ${theme}`}>
             <Nav/>
