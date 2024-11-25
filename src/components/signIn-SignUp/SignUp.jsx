@@ -49,37 +49,39 @@ export default function SignUp() {
 
     return (
         <div className="login-box">
-            <input
-                aria-label="Enter Account Email"
-                type="email"
-                name="email"
-                pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|[a-zA-Z0-9_]+"
-                value={emailValue}
-                onChange={handleEmailEntry}
-                placeholder="email"
-            /><br/>
-            <input
-                className={isPasswordMatch ? '' : 'invalid'}
-                aria-label="Enter Account Password"
-                type="password"
-                name=""
-                pattern="[a-zA-Z0-9]+"
-                value={passwordValue1}
-                onChange={handlePassword1Entry}
-                placeholder="password"
-            /><br/>
-            <input
-                className={isPasswordMatch ? '' : 'invalid'}
-                aria-label="Enter Account Password match"
-                type="password"
-                name=""
-                pattern="[a-zA-Z0-9]+"
-                value={passwordValue2}
-                onChange={handlePassword2Entry}
-                placeholder="password"
-            /><br/>
-            { isPasswordMatch ? null : <p className="errorMsg">Passwords do not match.</p>}
-            <button aria-label="Sign Up For Account" onClick={signUp} type="button">Sign Up</button>
+            <form action="">
+                <input
+                    aria-label="Enter Account Email"
+                    type="email"
+                    name="email"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    value={emailValue}
+                    onChange={handleEmailEntry}
+                    placeholder="email"
+                /><br/>
+                <input
+                    className={isPasswordMatch ? '' : 'invalid'}
+                    aria-label="Enter Account Password"
+                    type="password"
+                    name=""
+                    pattern="[a-zA-Z0-9]+"
+                    value={passwordValue1}
+                    onChange={handlePassword1Entry}
+                    placeholder="password"
+                /><br/>
+                <input
+                    className={isPasswordMatch ? '' : 'invalid'}
+                    aria-label="Enter Account Password match"
+                    type="password"
+                    name=""
+                    pattern="[a-zA-Z0-9]+"
+                    value={passwordValue2}
+                    onChange={handlePassword2Entry}
+                    placeholder="password"
+                /><br/>
+                { isPasswordMatch ? null : <p className="errorMsg">Passwords do not match.</p>}
+                <button aria-label="Sign Up For Account" onClick={signUp} type="button">Sign Up</button>
+            </form>
         </div>
     )
 }
