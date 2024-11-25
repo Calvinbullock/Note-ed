@@ -2,6 +2,10 @@
 // react modules
 import React, { useEffect, useState } from "react";
 
+// firebase
+import { db } from "./../config/firebase";
+import { collection, onSnapshot} from "firebase/firestore";
+
 // components
 import Nav from "./nav/Nav";
 import NoteCard from "./NoteCard";
@@ -13,21 +17,41 @@ import "./HomePage.css"
 /*  ===============================================
  *  COMPONENT DEFINITION
  * ============================================= */
-export default function HomePage({noteData}) {
+export default function HomePage() {
 
     // app context
     const {
         theme,
         searchTarget,
+        isLogedIn,
     } = useAppContext();
 
-    const [selectedSort, setSort] = useState('A-Z');
-    const [searchMatches, setSearchMatches] = useState([]);
+    const notesCollectionRef                  = collection(db, "Notes");
+    const [ noteData, setNoteData ]           = useState([]);
+    const [ selectedSort, setSort ]           = useState('A-Z');
+    const [ searchMatches, setSearchMatches ] = useState([]);
 
     // sort change handler
     const handleSortChange = (event) => {
         setSort(event.target.value);
     };
+
+    // get all Notes from DB
+    useEffect(() => {
+        const unsubscribe = onSnapshot(notesCollectionRef, (snapshot) => {
+            try {
+                const noteData = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+
+                setNoteData(noteData);
+            } catch (err) { console.log(err); }
+        });
+        // Clean up the listener when the component unmounts
+        return () => unsubscribe();
+        // eslint-disable-next-line
+    }, []);
 
     // Sort Notes based on selected start type
     if (selectedSort === "A-Z") {
@@ -53,17 +77,24 @@ export default function HomePage({noteData}) {
         // eslint-disable-next-line
     }, [searchTarget]);
 
+    // re-render on logout / login and clear note list
+    useEffect(() => {
+        if (!isLogedIn) {
+            setNoteData([]);
+        }
+    }, [isLogedIn])
+
     // HTML Component
     return (
-     <div className={`home page ${theme}`}>
+        <div className={`home page ${theme}`}>
             <Nav/>
 
             <section id="seachResults">
-                    <div class="note-grid">
-                        {searchMatches != null && searchMatches.map((element, index) => (
-                            <NoteCard key={index} {...element} />
-                        ))}
-                    </div>
+                <div className="note-grid">
+                    {searchMatches != null && searchMatches.map((element, index) => (
+                        <NoteCard key={index} {...element} />
+                    ))}
+                </div>
             </section>
 
             <section id="note-section">
@@ -79,7 +110,7 @@ export default function HomePage({noteData}) {
                         <option value="newest">Newest</option>
                         <option value="oldest">Oldest</option>
                     </select>
-                    <div class="note-grid">
+                    <div className="note-grid">
                         {noteData != null && noteData.map((element, index) => (
                             <NoteCard key={index} {...element} />
                         ))}

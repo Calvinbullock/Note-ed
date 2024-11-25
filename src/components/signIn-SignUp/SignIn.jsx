@@ -6,11 +6,14 @@ import { auth } from "../../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 import "./SignIn-signUp.css"
+import { useAppContext } from "../AppContext";
 
 export default function SignIn() {
     const [ emailValue, setEmailValue ] = useState("")
     const [ passwordValue, setPassword] = useState("")
     const navigate = useNavigate();
+
+    const {setIsLogedIn} = useAppContext();
 
     const handleEmailEntry = (event) => {
         setEmailValue(event.target.value);
@@ -22,6 +25,7 @@ export default function SignIn() {
     const signIn = async () => {
         try {
             await signInWithEmailAndPassword(auth, emailValue, passwordValue);
+            setIsLogedIn(true);
             navigate('/');
         } catch (err) {
             console.error(err);

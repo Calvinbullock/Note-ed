@@ -6,13 +6,16 @@ import { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 import "./SignIn-signUp.css"
+import { useAppContext } from "../AppContext";
 
 export default function SignUp() {
     const [ emailValue, setEmailValue ] = useState("")
     const [ passwordValue1, setPassword1] = useState("")
     const [ passwordValue2, setPassword2] = useState("")
-    const [isPasswordMatch, setIsPasswordMatch] = useState(false);
+    const [ isPasswordMatch, setIsPasswordMatch ] = useState(false);
     const navigate = useNavigate();
+
+    const { setIsLogedIn } = useAppContext();
 
     const handleEmailEntry = (event) => {
         setEmailValue(event.target.value);
@@ -29,6 +32,7 @@ export default function SignUp() {
             if (passwordValue1 === passwordValue2) {
                 setIsPasswordMatch(true);
                 await createUserWithEmailAndPassword(auth, emailValue, passwordValue1);
+                setIsLogedIn(true);
                 navigate('/');
             } else {
                 setIsPasswordMatch(false);
