@@ -30,11 +30,11 @@
 }
 
 .dark-theme input::placeholder {
-  color: var(--placeholder-dark);
+    color: var(--placeholder-dark);
 }
 
 .dark-theme textarea::placeholder {
-  color: var(--placeholder-dark);
+    color: var(--placeholder-dark);
 }
 
 .dark-theme link {
@@ -53,7 +53,6 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
 /* ==============================================================================
 Default react page styling
 -- REMOVE?? --

@@ -11,6 +11,7 @@ signUp / signIn - component
 
 .dark-theme input {
     background: var(--nav-input-dark);
+    background-color: var(--nav-input-dark);
     color: var(--nav-text-input-dark);
 }
 
@@ -41,3 +42,36 @@ signUp / signIn - component
 #alt-sign-up {
     font-size: .8rem;
 }
+
+/* ------------ input valid - invalid ------------ */
+input:invalid {
+    border-color: darkred;
+    border: 4px solid darkred;
+}
+
+input:valid {
+    border-color: green;
+    border: 4px solid green;
+}
+
+.dark-theme input:invalid {
+    border-color: darkred;
+    border: 4px solid darkred;
+    background: var(--nav-input-dark);
+    background-color: var(--nav-input-dark);
+}
+
+.dark-theme input:valid {
+    border-color: green;
+    border: 4px solid green;
+    background: var(--nav-input-dark);
+    background-color: var(--nav-input-dark);
+}
+
+/* form auto fill styles */
+.dark-theme input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text);
+    -webkit-box-shadow: 0 0 0px 1000px var(--nav-input-dark) inset;
+}
+
+
