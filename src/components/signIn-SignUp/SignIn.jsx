@@ -34,6 +34,7 @@ export default function SignIn() {
                 aria-label="Enter Account Email"
                 type="email"
                 name="email"
+                pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|[a-zA-Z0-9_]+"
                 value={emailValue}
                 onChange={handleEmailEntry}
                 placeholder="email"
@@ -41,6 +42,7 @@ export default function SignIn() {
             <input
                 aria-label="Enter Account Password"
                 type="password"
+                pattern="[a-zA-Z0-9]+"
                 name=""
                 value={passwordValue}
                 onChange={handlePasswordEntry}

@@ -1,5 +1,9 @@
 
 :root {
+    --error: darkred;
+    --dark-error: red;
+    --valid: green;
+
     /* LIGHT THEME */
     --background-light: white;
     --text-light: #00000d;
