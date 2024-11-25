@@ -44,24 +44,23 @@ signUp / signIn - component
 }
 
 /* ------------ input valid - invalid ------------ */
-input:invalid {
+.login-box input:invalid {
     border-color: darkred;
     border: 4px solid darkred;
 }
-
-input:valid {
+.login-box input:valid {
     border-color: green;
     border: 4px solid green;
 }
 
-.dark-theme input:invalid {
+.dark-theme .login-box input:invalid {
     border-color: darkred;
     border: 4px solid darkred;
     background: var(--nav-input-dark);
     background-color: var(--nav-input-dark);
 }
 
-.dark-theme input:valid {
+.dark-theme .login-box input:valid {
     border-color: green;
     border: 4px solid green;
     background: var(--nav-input-dark);
@@ -69,7 +68,7 @@ input:valid {
 }
 
 /* form auto fill styles */
-.dark-theme input:-webkit-autofill {
+.dark-theme .login-box input:-webkit-autofill {
     -webkit-text-fill-color: var(--text);
     -webkit-box-shadow: 0 0 0px 1000px var(--nav-input-dark) inset;
 }
