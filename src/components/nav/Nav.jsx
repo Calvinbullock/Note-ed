@@ -55,14 +55,15 @@ export default function Nav() {
             />
             <ul id="suggestionList"></ul>
 
-            {(auth.currentUser == null) ? (
-                <button
-                    aria-label="SignIn"
-                    onClick={handleSignIn}
-                    id="signIn-button"
-                    type=""
-                >Sign In</button>
-            ) : (
+            {(auth.currentUser == null) ?
+                (
+                    <button
+                        aria-label="SignIn"
+                        onClick={handleSignIn}
+                        id="signIn-button"
+                        type=""
+                    >Sign In</button>
+                ) : (
                     <button
                         aria-label="SignOut"
                         onClick={handleSignOut}
