@@ -49,6 +49,10 @@
     color: var(--link-clicked-dark);
 }
 
+.home {
+    margin: auto;
+}
+
 main {
     max-width: 1500px;
 }
