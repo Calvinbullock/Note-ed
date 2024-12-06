@@ -62,6 +62,32 @@ function getThemeFromLocalStorage() {
     return theme;
 }
 
+/* ==================================================================
+ * Format Date
+ * ================================================================== */
+function formateData(data) {
+
+    // format date -- helper func
+    function formatDate(dateString) {
+        if (dateString == null) {
+            return;
+        }
+        const [year, month, day] = dateString.split('-');
+        const formattedDate = `${day}/${month}/${year}`;
+        return formattedDate;
+    }
+
+    data.dueDate = formatDate(data.dueDate);
+
+    // set all undefined to empty string
+    if (data.dateAddedEpoch === undefined) {data.dateAddedEpoch = ""}
+    if (data.dueDate === undefined) {data.dueDate = ""}
+    if (data.title === undefined) {data.title = ""}
+    if (data.text === undefined) {data.text = ""}
+
+    return data;
+}
+
 export {
     clearInput,
     getEpochTimeInSeconds,
