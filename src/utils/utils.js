@@ -13,14 +13,6 @@ function getEpochTimeInSeconds() {
     return Math.floor(Date.now() / 1000);
 }
 
-function formatEpochTime(epochTime) {
-    const date = new Date(epochTime * 1000); // Convert to milliseconds
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-}
-
 /* ==================================================================
  * Set Note To Local Storage
  *  sets the note being edited to local storage
@@ -63,22 +55,49 @@ function getThemeFromLocalStorage() {
 }
 
 /* ==================================================================
+ * Validate Note Data
+ *      Validate user input for a note return true if valid false if invalid
+ *      1 = js error
+ *      2 = date consistency error
+ *      3 = due date error
+ * ================================================================== */
+function validateNoteData(data) {
+
+    // blank is a valid state
+    if (data.dateAdded !== "" && data.dueDate !== "") {
+        const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/; // date should match DD/MM/YYYY
+
+        // added Date check
+        if (!dateRegex.test(data.dateAdded)) {
+            return 1;
+        }
+        // due date check
+        if (!dateRegex.test(data.dueDate)) {
+            return 3;
+        }
+    }
+
+    const dateAddedMs = new Date(data.dateAdded).getTime(); // in milisecs
+
+    // BUG: not quite working yet
+    //// Date consistency -- dateAdded / dateAddedEpoch verification
+    //if (Math.abs(dateAddedMs - data.dateAddedEpoch) > 1000 || !data.dateAddedEpoch || !data.dateAdded) {
+    //    //return 2;
+    //}
+
+    // Due date is in the future
+    const dueDateMs = new Date(data.dueDate).getTime(); // in milisecs
+    if (dueDateMs <= dateAddedMs) {
+        return 3;
+    }
+
+    return 0;
+}
+
+/* ==================================================================
  * Format Date
  * ================================================================== */
 function formateData(data) {
-
-    // format date -- helper func
-    function formatDate(dateString) {
-        if (dateString == null) {
-            return;
-        }
-        const [year, month, day] = dateString.split('-');
-        const formattedDate = `${day}/${month}/${year}`;
-        return formattedDate;
-    }
-
-    data.dueDate = formatDate(data.dueDate);
-
     // set all undefined to empty string
     if (data.dateAddedEpoch === undefined) {data.dateAddedEpoch = ""}
     if (data.dueDate === undefined) {data.dueDate = ""}
@@ -91,9 +110,10 @@ function formateData(data) {
 export {
     clearInput,
     getEpochTimeInSeconds,
-    formatEpochTime,
     setNoteLocalStorage,
     getNoteLocalStorage,
     clearNoteLocalStorage,
     getThemeFromLocalStorage,
+    validateNoteData,
+    formateData,
 }

@@ -6,8 +6,15 @@ import { collection, addDoc, doc, updateDoc} from "firebase/firestore";
 import { db, auth } from "./../config/firebase";
 
 // components
-import { formatEpochTime, clearInput, getNoteLocalStorage, clearNoteLocalStorage} from "../utils/utils";
 import { useAppContext } from "./AppContext";
+import {
+    clearInput,
+    getNoteLocalStorage,
+    clearNoteLocalStorage,
+    validateNoteData,
+    formatEpochTime,
+    formateData
+} from "../utils/utils";
 
 import "./NoteEditor.css"
 
@@ -21,6 +28,7 @@ export default function NoteEditor() {
     const [ dueDateValue, setDueDateEntry ] = useState("")
     const [ textValue, setTextEntry ] = useState("")
     const [ noteId, setId] = useState("")
+    const [ activateNotifi, setActivateNotifi] = useState("")
 
     const { wasEditNoteClicked, setEditNoteWasClicked} = useAppContext();
 
@@ -55,6 +63,7 @@ export default function NoteEditor() {
         setTitleEntry("");
         setDueDateEntry("");
         setTextEntry("");
+        setActivateNotifi("");
 
         clearNoteLocalStorage();
     };
@@ -124,20 +133,38 @@ export default function NoteEditor() {
      *  Submit the note to fireBase
      * ============================================= */
     const submitNote = async () => {
-        const addDate = Date.now();
-        try {
-            await addDoc(notesCollectionRef, {
-                title: titleValue,
-                date: formatEpochTime(dueDateValue),
-                dateEpoch: addDate,
-                dueDate: dueDateValue,
-                text: textValue,
-                userId: auth?.currentUser?.uid,
-            });
-            clearEditor();
+        const addDate = new Date(Date.now());
 
-        } catch (err) {
-            console.error(err);
+        let data = {
+            title: titleValue,
+            dateAddedEpoch: addDate,
+            dateAdded: addDate.toLocaleDateString('en-GB'),
+            dueDate: dueDateValue,
+            text: textValue,
+            userId: auth?.currentUser?.uid,
+        }
+
+        data = formateData(data);
+
+        switch (validateNoteData(data)) {
+            case 0:
+                setActivateNotifi("");
+                try {
+                    await addDoc(notesCollectionRef, data);
+                    clearEditor();
+
+                } catch (err) {
+                    console.error(err);
+                }
+                break;
+            case 1:
+                setActivateNotifi("Server Error");
+                break;
+            case 3:
+                setActivateNotifi("Due Date Error");
+                break;
+            default:
+                setActivateNotifi("");
         }
     };
 
@@ -166,7 +193,7 @@ export default function NoteEditor() {
                 name="dueDateEntry"
                 value={dueDateValue}
                 onChange={handleDueDateChange}
-                placeholder="Due Date"
+                placeholder="Due Date - dd/mm/yyyy"
             /><br/>
             <textarea
                 aria-label="Write Note"
@@ -196,6 +223,11 @@ export default function NoteEditor() {
                     onClick={clearEditor}
                 >clear</button>
             </div>
+            {activateNotifi === "" ? (
+                <></> // Or null
+            ) : (
+                    <p className="errorMsg">{activateNotifi}</p>
+                )}
         </div>
     );
 }

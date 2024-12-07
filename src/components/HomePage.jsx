@@ -59,9 +59,9 @@ export default function HomePage() {
     } else if (selectedSort === "Z-A") {
         noteData.sort((a, b) => b.title.localeCompare(a.title));
     } else if (selectedSort === "newest") {
-        noteData.sort((a, b) => (b.dateEpoch - a.dateEpoch))
+        noteData.sort((a, b) => (b.dateAddedEpoch - a.dateAddedEpoch))
     } else if (selectedSort === "oldest") {
-        noteData.sort((a, b) => (a.dateEpoch - b.dateEpoch))
+        noteData.sort((a, b) => (a.dateAddedEpoch - b.dateAddedEpoch))
     }
 
     // Note Search Filter
