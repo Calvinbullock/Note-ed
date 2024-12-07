@@ -12,7 +12,6 @@ import {
     getNoteLocalStorage,
     clearNoteLocalStorage,
     validateNoteData,
-    formatEpochTime,
     formateData
 } from "../utils/utils";
 
