@@ -13,14 +13,27 @@ Run testing  / dev server
 - should deploy a build every time a change is pushed/megerd to main git branch -- DISABLED
 
 ##### if auto prod build fails
-- run `./deploy.sh`
+- run `./deploy.sh` from main branch
 
 #### or
-
 - `npm run build`
 - `firebase deploy`
 
 [Live Site](https://noted-eeafd.web.app)
+
+# Milestone
+- Must Have's
+    - 1 - ~~add remove notes~~
+    - 2 - ~~sign in capabilities~~
+    - 3 - ~~database back and forth~~
+    - 5 - ~~nice looking and responsive UI (mobile, desktop, etc)~~
+    - 6 - ~~user driven UI (sorting, search)~~
+
+- Nice Have's
+    - 1 - ~~edit / update existing notes~~
+    - 2 - ~~device / tab synchronization (new notes show with out reload)~~
+    - 3 - ~~input sanitation~~
+    - 4 - Due date indicator
 
 # TODO
 ```
@@ -48,14 +61,13 @@ TODO: 2
 WORKING: search
 ```
 
-# Milestone
-- Other ideas
-    - Pin notes?
-    - Synchronization between two devices/tabs
-    - Cool new note, expand area to enter note, like keep functionality.
-    - Edit automatically pops the text back up to the note editing area (like keep). (week 7)
+# Other ideas to add
+- Pin notes?
+- Synchronization between two devices/tabs
+- Cool new note, expand area to enter note, like keep functionality.
+- Edit automatically pops the text back up to the note editing area (like keep). (week 7)
 
-#### Pining notes
+## Pining notes - ideas
 - add a flag `pined: T/F`
 ```js
 if (pinned) {
@@ -64,20 +76,7 @@ if (pinned) {
 }
 ```
 
-- Must Have's
-    - 1 - ~~add remove notes~~
-    - 2 - ~~sign in capabilities~~
-    - 3 - ~~database back and forth~~
-    - 5 - nice looking and responsive UI (mobile, desktop, etc)
-    - 6 - user driven UI (sorting, search)
-
-- Nice Have's
-    - 1 - ~~edit / update existing notes~~
-    - 2 - ~~device / tab synchronization (new notes show with out reload)~~
-    - 3 - input sanitation
-    - 4 - Due date indicator
-
-## resources
+# resources
 - [FireBase CRUD](https://www.youtube.com/watch?v=2hR-uWjBAgw)
 
 - [Firebase React Course For Beginners](https://www.youtube.com/watch?v=2hR-uWjBAgw)
@@ -87,7 +86,7 @@ if (pinned) {
 
 - [link to firebase setup portal](https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-firebase/)
 
-#### firebase docs
+## firebase docs
 - [rest API code](https://firebase.google.com/docs/firestore/use-rest-api#making_rest_calls)
 - [rest API requests](https://firebase.google.com/docs/firestore/reference/rest/)
 
