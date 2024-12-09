@@ -38,8 +38,6 @@ Run testing  / dev server
 ## TODO
 ```
 ACTIVE TICKET
-- due date dropdown (noteEditor)
-- input validation
 - due date passed icon
 
 - notes additions
@@ -57,8 +55,6 @@ ACTIVE TICKET
     - make sure really really long words wrap properly
     - keep editor in place as user scrolls
 
-TODO: 2
-WORKING: search
 ```
 
 ## Other ideas to add
