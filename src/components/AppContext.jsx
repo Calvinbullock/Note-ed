@@ -40,6 +40,12 @@ export const AppProvider = ({ children }) => {
     const [ searchTarget, setSearchTarget ] = useState("");
 
     /*  =======================================================================
+     *     LogInStat
+     * ===================================================================== */
+
+    const [ isLogedIn, setIsLogedIn] = useState("");
+
+    /*  =======================================================================
      *      context values
      * ===================================================================== */
     const value = {
@@ -52,6 +58,9 @@ export const AppProvider = ({ children }) => {
         // search Target
         searchTarget,
         setSearchTarget,
+        // login stat
+        isLogedIn,
+        setIsLogedIn,
     };
 
     return (

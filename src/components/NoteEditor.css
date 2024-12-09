@@ -57,6 +57,10 @@
     display: none;
 }
 
+.errorMsg {
+    color: var(--dark-error);
+}
+
 /* ------------ buttons ------------ */
 
 .noteEditor-buttons {

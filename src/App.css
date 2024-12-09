@@ -1,5 +1,9 @@
 
 :root {
+    --error: darkred;
+    --dark-error: red;
+    --valid: green;
+
     /* LIGHT THEME */
     --background-light: white;
     --text-light: #00000d;
@@ -30,11 +34,11 @@
 }
 
 .dark-theme input::placeholder {
-  color: var(--placeholder-dark);
+    color: var(--placeholder-dark);
 }
 
 .dark-theme textarea::placeholder {
-  color: var(--placeholder-dark);
+    color: var(--placeholder-dark);
 }
 
 .dark-theme link {
@@ -45,6 +49,10 @@
     color: var(--link-clicked-dark);
 }
 
+.home {
+    margin: auto;
+}
+
 main {
     max-width: 1500px;
 }
@@ -53,7 +61,6 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
 /* ==============================================================================
 Default react page styling
 -- REMOVE?? --

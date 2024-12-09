@@ -24,13 +24,18 @@ Run testing  / dev server
 
 # TODO
 ```
-- notes
-    - search
+ACTIVE TICKET
+- due date dropdown (noteEditor)
+- input validation
+- due date passed icon
+
+- notes additions
+    - add clear search button
     - confirm delete
     - click and drag??
 
 - Auth
-    - add auth to app context
+    - make login div wider
     - if not logged in send user right to login
     - check the user is supposed to have accuses to the note
 

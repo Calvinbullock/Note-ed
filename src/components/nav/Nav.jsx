@@ -10,13 +10,22 @@ import "./Nav.css"
  * ============================================= */
 export default function Nav() {
     const navigate = useNavigate();
-    const { toggleTheme, setSearchTarget } = useAppContext();
+    const { toggleTheme, setSearchTarget, setIsLogedIn } = useAppContext();
 
     /*  ===============================================
      *  Login redirect
      * ============================================= */
     const handleSignIn = () => {
+        setIsLogedIn(true);
         navigate('/signIn');
+    };
+
+    /*  ===============================================
+     *  Logout
+     * ============================================= */
+    const handleSignOut = () => {
+        setIsLogedIn(false);
+        auth.signOut()
     };
 
     /*  ===============================================
@@ -46,17 +55,18 @@ export default function Nav() {
             />
             <ul id="suggestionList"></ul>
 
-            {(auth.currentUser == null) ? (
-                <button
-                    aria-label="SignIn"
-                    onClick={handleSignIn}
-                    id="signIn-button"
-                    type=""
-                >Sign In</button>
-            ) : (
+            {(auth.currentUser == null) ?
+                (
+                    <button
+                        aria-label="SignIn"
+                        onClick={handleSignIn}
+                        id="signIn-button"
+                        type=""
+                    >Sign In</button>
+                ) : (
                     <button
                         aria-label="SignOut"
-                        onClick={() => auth.signOut() }
+                        onClick={handleSignOut}
                         id="signIn-button"
                         type=""
                     >Sign Out</button>
