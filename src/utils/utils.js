@@ -1,7 +1,7 @@
 
 /* ==================================================================
  * CLEAR INPUT
- */
+ * ================================================================== */
 function clearInput(inputId) {
     const inputElement = document.getElementById(inputId);
     if (inputElement) {
@@ -11,7 +11,7 @@ function clearInput(inputId) {
 
 /* ==================================================================
  * Epoch Time in seconds
- */
+ * ================================================================== */
 function getEpochTimeInSeconds() {
     return Math.floor(Date.now() / 1000);
 }
@@ -19,7 +19,7 @@ function getEpochTimeInSeconds() {
 /* ==================================================================
  * Set Note To Local Storage
  *  sets the note being edited to local storage
- */
+ * ================================================================== */
 function setNoteLocalStorage(noteData) {
     localStorage.setItem("currentNote", JSON.stringify(noteData));
 }
@@ -27,7 +27,7 @@ function setNoteLocalStorage(noteData) {
 /* ==================================================================
  * Get Note From Local Storage
  *  gets the note being edited to local storage
- */
+ * ================================================================== */
 function getNoteLocalStorage() {
     return JSON.parse(localStorage.getItem("currentNote"));
 }
@@ -35,7 +35,7 @@ function getNoteLocalStorage() {
 /* ==================================================================
  * Clear Note From Local Storage
  *  clears the note being edited to local storage
- */
+ * ================================================================== */
 function clearNoteLocalStorage() {
     localStorage.setItem("currentNote", JSON.stringify({}));
 }
@@ -43,7 +43,7 @@ function clearNoteLocalStorage() {
 /* ==================================================================
  * GET THEME FOR LOCAL STORAGE
  *      is used to keep the theme set on page refresh
- */
+ * ================================================================== */
 function getThemeFromLocalStorage() {
     let theme = localStorage.getItem('theme');
 
@@ -63,7 +63,7 @@ function getThemeFromLocalStorage() {
  *      1 = js error
  *      2 = date consistency error
  *      3 = due date error
- */
+ * ================================================================== */
 function validateNoteData(data) {
 
     // blank is a valid state
@@ -99,7 +99,7 @@ function validateNoteData(data) {
 
 /* ==================================================================
  * Format Date
- */
+ * ================================================================== */
 function formateData(data) {
     // set all undefined to empty string
     if (data.dateAddedEpoch === undefined) {data.dateAddedEpoch = ""}
