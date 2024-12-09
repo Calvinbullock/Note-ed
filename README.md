@@ -21,7 +21,7 @@ Run testing  / dev server
 
 [Live Site](https://noted-eeafd.web.app)
 
-# Milestone
+## Feature Milestones
 - Must Have's
     - 1 - ~~add remove notes~~
     - 2 - ~~sign in capabilities~~
@@ -35,7 +35,7 @@ Run testing  / dev server
     - 3 - ~~input sanitation~~
     - 4 - Due date indicator
 
-# TODO
+## TODO
 ```
 ACTIVE TICKET
 - due date dropdown (noteEditor)
@@ -61,13 +61,13 @@ TODO: 2
 WORKING: search
 ```
 
-# Other ideas to add
+## Other ideas to add
 - Pin notes?
 - Synchronization between two devices/tabs
 - Cool new note, expand area to enter note, like keep functionality.
 - Edit automatically pops the text back up to the note editing area (like keep). (week 7)
 
-## Pining notes - ideas
+### Pining notes - ideas
 - add a flag `pined: T/F`
 ```js
 if (pinned) {
@@ -76,7 +76,7 @@ if (pinned) {
 }
 ```
 
-# resources
+## resources
 - [FireBase CRUD](https://www.youtube.com/watch?v=2hR-uWjBAgw)
 
 - [Firebase React Course For Beginners](https://www.youtube.com/watch?v=2hR-uWjBAgw)
@@ -86,7 +86,7 @@ if (pinned) {
 
 - [link to firebase setup portal](https://www.freecodecamp.org/news/how-to-deploy-a-react-app-with-firebase/)
 
-## firebase docs
+### firebase docs
 - [rest API code](https://firebase.google.com/docs/firestore/use-rest-api#making_rest_calls)
 - [rest API requests](https://firebase.google.com/docs/firestore/reference/rest/)
 
