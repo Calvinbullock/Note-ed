@@ -110,6 +110,7 @@ export default function NoteEditor() {
         const docRef = doc(db, "Notes", noteId);
 
         try {
+            // TODO: needs to re validate note data
             await updateDoc(docRef, {
                 title: titleValue,
                 dueDate: dueDateValue,
@@ -161,6 +162,12 @@ export default function NoteEditor() {
                 break;
             case 3:
                 setActivateNotifi("Due Date Error");
+                break;
+            case 4:
+                setActivateNotifi("Title is too long");
+                break;
+            case 5:
+                setActivateNotifi("Note content is to long");
                 break;
             default:
                 setActivateNotifi("");
