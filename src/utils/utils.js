@@ -67,10 +67,6 @@ function validateNoteData(data) {
     if (data.dateAdded !== "" && data.dueDate !== "") {
         const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/; // date should match DD/MM/YYYY
 
-        // added Date check
-        if (!dateRegex.test(data.dateAdded)) {
-            return [ false, "Server, Error" ];
-        }
         // due date check
         if (!dateRegex.test(data.dueDate)) {
             return [ false, "Due Date Error" ];
@@ -106,6 +102,17 @@ function validateNoteData(data) {
 }
 
 /* ==================================================================
+ * Format Edit Date
+ * ================================================================== */
+function formateEditData(data) {
+    // set all undefined to empty string
+    if (data.title === undefined) {data.title = ""}
+    if (data.text === undefined) {data.text = ""}
+
+    return data;
+}
+
+/* ==================================================================
  * Format Date
  * ================================================================== */
 function formateData(data) {
@@ -126,5 +133,6 @@ export {
     clearNoteLocalStorage,
     getThemeFromLocalStorage,
     validateNoteData,
+    formateEditData,
     formateData,
 }

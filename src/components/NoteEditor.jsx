@@ -12,7 +12,8 @@ import {
     getNoteLocalStorage,
     clearNoteLocalStorage,
     validateNoteData,
-    formateData
+    formateData,
+    formateEditData
 } from "../utils/utils";
 
 import "./NoteEditor.css"
@@ -116,7 +117,7 @@ export default function NoteEditor() {
             modList: [],
         }
 
-        data = formateData(data);
+        data = formateEditData(data);
         const [ isValid, errorMsg ] = validateNoteData(data);
 
         setActivateNotifi(errorMsg);
