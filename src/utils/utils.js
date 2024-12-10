@@ -74,29 +74,29 @@ function validateNoteData(data) {
 
         // added Date check
         if (!dateRegex.test(data.dateAdded)) {
-            return 1;
+            return [ false, "Server, Error" ];
         }
         // due date check
         if (!dateRegex.test(data.dueDate)) {
-            return 3;
+            return [ false, "Due Date Error" ];
         }
     }
 
-    // Due date is in the future
+    // Due date is in the past
     const dateAddedMs = new Date(data.dateAdded).getTime(); // in milisecs
     const dueDateMs = new Date(data.dueDate).getTime(); // in milisecs
     if (dueDateMs <= dateAddedMs) {
-        return 3;
+        return [ false, "Due Date Error" ];
     }
 
     // check title is not longer then 50 characters
     if (data.title.length > 50) {
-        return 4;
+        return [ false, `Title text is ${data.title.length - 50} charictors too long` ];
     }
 
-    // check content text is not longer then 250 characters
-    if (data.text.length > 250) {
-        return 5;
+    // check content text is not longer then 450 characters
+    if (data.text.length > 450) {
+        return [ false, `Content text is ${data.text.length - 450} charictors too long` ];
     }
 
     // BUG: not quite working yet
@@ -107,7 +107,7 @@ function validateNoteData(data) {
     //    //return 2;
     //}
 
-    return 0;
+    return [ true, "" ];
 }
 
 /* ==================================================================

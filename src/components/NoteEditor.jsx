@@ -145,32 +145,17 @@ export default function NoteEditor() {
         }
 
         data = formateData(data);
+        const [ isValid, errorMsg ] = validateNoteData(data);
 
-        switch (validateNoteData(data)) {
-            case 0:
-                setActivateNotifi("");
-                try {
-                    await addDoc(notesCollectionRef, data);
-                    clearEditor();
+        setActivateNotifi(errorMsg);
+        if (isValid) {
+            try {
+                await addDoc(notesCollectionRef, data);
+                clearEditor();
 
-                } catch (err) {
-                    console.error(err);
-                }
-                break;
-            case 1:
-                setActivateNotifi("Server Error");
-                break;
-            case 3:
-                setActivateNotifi("Due Date Error");
-                break;
-            case 4:
-                setActivateNotifi("Title is too long");
-                break;
-            case 5:
-                setActivateNotifi("Note content is to long");
-                break;
-            default:
-                setActivateNotifi("");
+            } catch (err) {
+                console.error(err);
+            }
         }
     };
 
