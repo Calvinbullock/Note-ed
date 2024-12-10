@@ -60,11 +60,6 @@ function getThemeFromLocalStorage() {
 /* ==================================================================
  * Validate Note Data
  *      Validate user input for a note return true if valid false if invalid
- *      1 = js / server error
- *      2 = date consistency error
- *      3 = due date error
- *      4 = title error
- *      5 = content error
  * ================================================================== */
 function validateNoteData(data) {
 

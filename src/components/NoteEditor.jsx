@@ -109,19 +109,25 @@ export default function NoteEditor() {
     const submitNoteEdit = async () => {
         const docRef = doc(db, "Notes", noteId);
 
-        try {
-            // TODO: needs to re validate note data
-            await updateDoc(docRef, {
-                title: titleValue,
-                dueDate: dueDateValue,
-                text: textValue,
-                modList: [],
-                //userId: auth?.currentUser?.uid,
-            });
-            clearEditor();
+        let data = {
+            title: titleValue,
+            dueDate: dueDateValue,
+            text: textValue,
+            modList: [],
+        }
 
-        } catch (err) {
-            console.error(err);
+        data = formateData(data);
+        const [ isValid, errorMsg ] = validateNoteData(data);
+
+        setActivateNotifi(errorMsg);
+        if (isValid) {
+            try {
+                await updateDoc(docRef, data);
+                clearEditor();
+
+            } catch (err) {
+                console.error(err);
+            }
         }
     };
 
@@ -141,6 +147,7 @@ export default function NoteEditor() {
             dateAdded: addDate.toLocaleDateString('en-GB'),
             dueDate: dueDateValue,
             text: textValue,
+            modList: [],
             userId: auth?.currentUser?.uid,
         }
 
