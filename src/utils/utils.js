@@ -60,41 +60,56 @@ function getThemeFromLocalStorage() {
 /* ==================================================================
  * Validate Note Data
  *      Validate user input for a note return true if valid false if invalid
- *      1 = js error
- *      2 = date consistency error
- *      3 = due date error
  * ================================================================== */
 function validateNoteData(data) {
 
-    // blank is a valid state
+    // blank date is a valid state
     if (data.dateAdded !== "" && data.dueDate !== "") {
         const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/; // date should match DD/MM/YYYY
 
-        // added Date check
-        if (!dateRegex.test(data.dateAdded)) {
-            return 1;
-        }
         // due date check
         if (!dateRegex.test(data.dueDate)) {
-            return 3;
+            return [ false, "Due Date Error" ];
         }
     }
 
+    // Due date is in the past
     const dateAddedMs = new Date(data.dateAdded).getTime(); // in milisecs
+    const dueDateMs = new Date(data.dueDate).getTime(); // in milisecs
+    if (dueDateMs <= dateAddedMs) {
+        return [ false, "Due Date Error" ];
+    }
+
+    // check title is not longer then 50 characters
+    if (data.title.length > 50) {
+        return [ false, `Title text is ${data.title.length - 50} charictors too long` ];
+    }
+
+    // check content text is not longer then 450 characters
+    if (data.text.length > 450) {
+        return [ false, `Content text is ${data.text.length - 450} charictors too long` ];
+    }
 
     // BUG: not quite working yet
+    //const dateAddedMs = new Date(data.dateAdded).getTime(); // in milisecs
+    //const dueDateMs = new Date(data.dueDate).getTime(); // in milisecs
     //// Date consistency -- dateAdded / dateAddedEpoch verification
     //if (Math.abs(dateAddedMs - data.dateAddedEpoch) > 1000 || !data.dateAddedEpoch || !data.dateAdded) {
     //    //return 2;
     //}
 
-    // Due date is in the future
-    const dueDateMs = new Date(data.dueDate).getTime(); // in milisecs
-    if (dueDateMs <= dateAddedMs) {
-        return 3;
-    }
+    return [ true, "" ];
+}
 
-    return 0;
+/* ==================================================================
+ * Format Edit Date
+ * ================================================================== */
+function formateEditData(data) {
+    // set all undefined to empty string
+    if (data.title === undefined) {data.title = ""}
+    if (data.text === undefined) {data.text = ""}
+
+    return data;
 }
 
 /* ==================================================================
@@ -118,5 +133,6 @@ export {
     clearNoteLocalStorage,
     getThemeFromLocalStorage,
     validateNoteData,
+    formateEditData,
     formateData,
 }

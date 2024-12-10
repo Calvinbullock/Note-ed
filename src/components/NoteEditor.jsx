@@ -12,7 +12,8 @@ import {
     getNoteLocalStorage,
     clearNoteLocalStorage,
     validateNoteData,
-    formateData
+    formateData,
+    formateEditData
 } from "../utils/utils";
 
 import "./NoteEditor.css"
@@ -109,18 +110,25 @@ export default function NoteEditor() {
     const submitNoteEdit = async () => {
         const docRef = doc(db, "Notes", noteId);
 
-        try {
-            await updateDoc(docRef, {
-                title: titleValue,
-                dueDate: dueDateValue,
-                text: textValue,
-                modList: [],
-                //userId: auth?.currentUser?.uid,
-            });
-            clearEditor();
+        let data = {
+            title: titleValue,
+            dueDate: dueDateValue,
+            text: textValue,
+            modList: [],
+        }
 
-        } catch (err) {
-            console.error(err);
+        data = formateEditData(data);
+        const [ isValid, errorMsg ] = validateNoteData(data);
+
+        setActivateNotifi(errorMsg);
+        if (isValid) {
+            try {
+                await updateDoc(docRef, data);
+                clearEditor();
+
+            } catch (err) {
+                console.error(err);
+            }
         }
     };
 
@@ -140,30 +148,22 @@ export default function NoteEditor() {
             dateAdded: addDate.toLocaleDateString('en-GB'),
             dueDate: dueDateValue,
             text: textValue,
+            modList: [],
             userId: auth?.currentUser?.uid,
         }
 
         data = formateData(data);
+        const [ isValid, errorMsg ] = validateNoteData(data);
 
-        switch (validateNoteData(data)) {
-            case 0:
-                setActivateNotifi("");
-                try {
-                    await addDoc(notesCollectionRef, data);
-                    clearEditor();
+        setActivateNotifi(errorMsg);
+        if (isValid) {
+            try {
+                await addDoc(notesCollectionRef, data);
+                clearEditor();
 
-                } catch (err) {
-                    console.error(err);
-                }
-                break;
-            case 1:
-                setActivateNotifi("Server Error");
-                break;
-            case 3:
-                setActivateNotifi("Due Date Error");
-                break;
-            default:
-                setActivateNotifi("");
+            } catch (err) {
+                console.error(err);
+            }
         }
     };
 
